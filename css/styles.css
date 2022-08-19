@@ -25,9 +25,41 @@ body {
   background-color: var(--neutral-3);
   color: var(--neutral-1);
 }
+.container {
+  max-width: 140rem;
+  margin: 0 auto;
+}
+section {
+  padding: 2.4rem 0;
+  border-bottom: 1px solid var(--neutral-4);
+}
 /* HEADER */
 .header-image {
   width: 100%;
   height: 100vh;
+}
+
+/* MAIN */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+.benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+.benefit-icon {
+  font-size: 4.8rem;
+}
+.benefit-title {
+  font-size: 3rem;
+}
+.benefit-desc {
+  font-size: 1.2rem;
 }
 
