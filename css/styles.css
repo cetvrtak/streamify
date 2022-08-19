@@ -33,6 +33,10 @@ section {
   padding: 2.4rem 0;
   border-bottom: 1px solid var(--neutral-4);
 }
+ul {
+  list-style: none;
+}
+
 /* HEADER */
 .header-image {
   width: 100%;
@@ -61,6 +65,30 @@ section {
 }
 .benefit-desc {
   font-size: 1.2rem;
+}
+
+/* PRICING */
+.pricing {
+  font-size: 2.4rem;
+}
+.pricing-billing {
+  display: flex;
+}
+.pricing-packages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ORDER FORM */
+.order-form {
+  background-color: var(--neutral-1);
+  color: var(--neutral-3);
+  display: flex;
+  align-items: center;
+  font-size: 2.4rem;
+}
+.order-details {
 }
 
 /* FOOTER */
