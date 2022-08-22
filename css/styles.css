@@ -26,11 +26,11 @@ body {
   color: var(--neutral-1);
 }
 .container {
-  max-width: 140rem;
+  max-width: 144rem;
   margin: 0 auto;
 }
 section {
-  padding: 2.4rem 0;
+  padding: 2.4rem 9.6rem;
   border-bottom: 1px solid var(--neutral-4);
 }
 ul {
@@ -40,7 +40,6 @@ ul {
 /* HEADER */
 .header-image {
   width: 100%;
-  height: 100vh;
 }
 
 /* MAIN */
