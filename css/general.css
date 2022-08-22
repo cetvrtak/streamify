@@ -60,3 +60,7 @@ input {
 
   visibility: hidden;
 }
+.btn {
+  border: none;
+  cursor: pointer;
+}

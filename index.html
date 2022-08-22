@@ -247,13 +247,16 @@
               </div>
               <div class="input-container input-big">
                 <label for="coupon">Coupon Code</label>
-                <input
-                  type="text"
-                  name="coupon"
-                  id="coupon"
-                  class="input-coupon"
-                  placeholder="Code123"
-                />
+                <div class="coupon-container">
+                  <input
+                    type="text"
+                    name="coupon"
+                    id="coupon"
+                    class="input-coupon"
+                    placeholder="Code123"
+                  />
+                  <div class="btn btn-coupon-apply">Apply</div>
+                </div>
                 <div class="validation-box">
                   <ion-icon
                     name="warning-outline"
@@ -264,7 +267,7 @@
               </div>
               <input
                 type="submit"
-                class="input-big btn-submit"
+                class="btn input-big btn-submit"
                 value="Complete Payment"
               />
             </form>
