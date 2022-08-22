@@ -72,6 +72,12 @@
 .input-big {
   grid-column: 1 / -1;
 }
+.btn-submit {
+  background-color: var(--primary-color);
+  color: #eceffa;
+  text-transform: uppercase;
+  justify-content: center;
+}
 .form-title,
 .order-title {
   font-weight: 700;
