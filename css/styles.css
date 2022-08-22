@@ -42,8 +42,8 @@
 
 /* ORDER FORM */
 .order-form {
-  background-color: var(--neutral-2);
-  color: var(--neutral-3);
+  background-color: #eceffa;
+  color: #121518;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8rem;
@@ -72,7 +72,7 @@
   grid-column: 1 / -1;
 }
 .btn-submit {
-  background-color: var(--primary-color);
+  background-color: #4d1ed5;
   color: #eceffa;
   text-transform: uppercase;
   justify-content: center;
