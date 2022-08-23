@@ -64,3 +64,6 @@ input {
   border: none;
   cursor: pointer;
 }
+.separator {
+  width: 100%;
+}
