@@ -11,6 +11,9 @@
   .benefits {
     flex-direction: column;
   }
+  .pricing-packages {
+    flex-direction: column;
+  }
   .order-form {
     grid-template-columns: 1fr;
   }

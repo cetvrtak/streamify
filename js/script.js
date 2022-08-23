@@ -37,6 +37,42 @@ const discountEl = document.querySelector(".order-details-discount");
 
 let selectedPackage = {};
 // FUNCTIONS
+function renderPackages() {
+  packages.forEach((pkg) => {
+    let html = `
+      <div class="pricing-package">
+        <div class="pricing-package-title">${pkg.title}</div>
+        <div class="pricing-package-desc">
+          1 month <span class="green">free</span>
+        </div>
+        <div class="pricing-package-pricing">
+          <span>$${pkg.price}</span>
+          <div>/month after offer period</div>
+        </div>
+        <ul class="pricing-package-features">
+    `;
+    pkg.features.forEach((feat) => {
+      html += `
+          <li class="package-feature">
+            <span class="material-symbols-outlined"> check_circle </span>
+            <div>${feat}</div>
+          </li>
+      `;
+    });
+    html += `
+        </ul>
+        <button class="btn choose-now">Choose Now</button>
+        <div class="pricing-package-terms">
+          Terms and conditions apply. 1 month free not available for users
+          who have already tried Premium.
+        </div>
+      </div>
+    `;
+    packagesEl.insertAdjacentHTML("afterbegin", html);
+  });
+}
+renderPackages();
+
 function updateOrderSummary(pkg) {}
 
 // EVENT LISTENERS
