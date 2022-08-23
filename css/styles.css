@@ -110,6 +110,12 @@
   margin-bottom: 5.05rem;
   line-height: 1.9rem;
 }
+.package-feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+}
 .choose-now {
   width: 100%;
   padding: 1.2rem 2.4rem;
