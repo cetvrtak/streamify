@@ -202,14 +202,27 @@
   gap: 4.8rem;
   border: 1px solid #121518;
   border-radius: 0.8rem;
+  width: 100%;
 }
-.order-details-package {
+.package-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4.8rem;
+}
+.package-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.package-name {
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 4rem;
   text-transform: uppercase;
 }
-.order-details-pricing {
+.package-pricing {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -218,12 +231,12 @@
   align-items: center;
   gap: 0.8rem;
 }
-.order-details-pricing span {
+.package-pricing span {
   font-weight: 700;
   font-size: 4.8rem;
   line-height: 5.6rem;
 }
-.order-details-features {
+.package-features {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

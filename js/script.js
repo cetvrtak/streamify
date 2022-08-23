@@ -28,6 +28,7 @@ const packages = [
 ];
 
 const packagesEl = document.querySelector(".pricing-packages");
+const packageDetailsEl = document.querySelector(".package-details");
 
 const packageEl = document.querySelector(".order-details-package");
 const pricingEl = document.querySelector(".order-details-pricing");
@@ -35,12 +36,11 @@ const featuresEl = document.querySelector(".order-details-features");
 const priceEl = document.querySelector(".order-details-price");
 const discountEl = document.querySelector(".order-details-discount");
 
-let selectedPackage = {};
 // FUNCTIONS
 function renderPackages() {
   packages.forEach((pkg) => {
     let html = `
-      <div class="pricing-package">
+      <div class="pricing-package" data-id="${packages.indexOf(pkg)}">
         <div class="pricing-package-title">${pkg.title}</div>
         <div class="pricing-package-desc">
           1 month <span class="green">free</span>
@@ -68,17 +68,41 @@ function renderPackages() {
         </div>
       </div>
     `;
-    packagesEl.insertAdjacentHTML("afterbegin", html);
+    packagesEl.insertAdjacentHTML("beforeend", html);
   });
 }
 renderPackages();
 
-function updateOrderSummary(pkg) {}
+function updateOrderSummary(pkg) {
+  let html = `
+    <div class="package-info">
+      <div class="package-name">${pkg.title} Package</div>
+      <div class="package-pricing">
+        <span>$${pkg.price}</span> /month after offer period
+      </div>
+    </div>
+    <ul class="package-features">
+    `;
+  pkg.features.forEach((feat) => {
+    html += `
+      <li class="package-feature">
+        <span class="material-symbols-outlined"> check_circle </span>
+        <div>${feat}</div>
+      </li>
+    `;
+  });
+  html += `
+    </ul>
+  `;
+  packageDetailsEl.innerHTML = "";
+  packageDetailsEl.insertAdjacentHTML("afterbegin", html);
+}
 
 // EVENT LISTENERS
 packagesEl.addEventListener("click", function (e) {
   const selectedPackageEl = e.target.closest(".pricing-package");
   if (!selectedPackageEl) return;
 
+  const selectedPackage = packages.at(selectedPackageEl.dataset.id);
   updateOrderSummary(selectedPackage);
 });
