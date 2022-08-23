@@ -265,6 +265,26 @@
 .listing span {
   font-weight: 700;
 }
+.order-details-total {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+.credit-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.credit-cards-title {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}
+.credit-cards-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
 
 /* FOOTER */
 footer {
