@@ -17,4 +17,10 @@
   .order-form {
     grid-template-columns: 1fr;
   }
+  .form-container {
+    order: 1;
+  }
+  .order-summary {
+    order: 0;
+  }
 }
