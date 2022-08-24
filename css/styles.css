@@ -81,6 +81,10 @@
   padding: 2.4rem;
   max-width: 33.7rem;
 }
+.pricing-package:nth-child(2) {
+  background-color: #eceffa;
+  color: #121518;
+}
 .pricing-package-title {
   font-weight: 700;
   font-size: 3.2rem;
@@ -91,6 +95,9 @@
   text-transform: uppercase;
   color: #727272;
   margin-bottom: 2.4rem;
+}
+.pricing-package:nth-child(2) .free {
+  color: #4d1ed5;
 }
 .pricing-package-pricing {
   display: flex;
@@ -127,6 +134,10 @@
   color: #a6d51e;
   text-transform: uppercase;
   margin-bottom: 2.4rem;
+}
+.pricing-package:nth-child(2) .choose-now {
+  background: #4d1ed5;
+  color: #eceffa;
 }
 .pricing-package-terms {
   font-size: 1.2rem;
