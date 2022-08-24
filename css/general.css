@@ -73,6 +73,7 @@ input {
 }
 .free {
   color: #a6d51e;
+  font-weight: 700;
 }
 .hidden {
   display: none;

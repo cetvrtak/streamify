@@ -38,6 +38,8 @@
   margin-bottom: 1.6rem;
 }
 .pricing-desc {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
   margin-bottom: 4.8rem;
 }
 .pricing-billing {
@@ -63,6 +65,7 @@
 }
 .pricing-billing-discount {
   font-size: 1.4rem;
+  line-height: 2.4rem;
   color: #eceffa;
   background: #d73939;
   border-radius: 8px;
