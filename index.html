@@ -33,288 +33,275 @@
         />
       </header>
 
-      <main>
-        <section class="benefits">
-          <div class="benefit">
-            <ion-icon name="wifi-outline" class="benefit-icon"></ion-icon>
-            <div class="benefit-title">Stream Any Content</div>
-            <div class="benefit-desc">
-              Get flexible as you go - focus on your content.
+      <section class="benefits">
+        <div class="benefit">
+          <ion-icon name="wifi-outline" class="benefit-icon"></ion-icon>
+          <div class="benefit-title">Stream Any Content</div>
+          <div class="benefit-desc">
+            Get flexible as you go - focus on your content.
+          </div>
+        </div>
+        <div class="benefit">
+          <ion-icon name="infinite-outline" class="benefit-icon"></ion-icon>
+          <div class="benefit-title">Unlimited streams</div>
+          <div class="benefit-desc">Be creative. Be limitless.</div>
+        </div>
+        <div class="benefit">
+          <ion-icon name="ribbon-outline" class="benefit-icon"></ion-icon>
+          <div class="benefit-title">Streamify Premium</div>
+          <div class="benefit-desc">
+            Download our new streaming app and stream your content as a pro.
+          </div>
+        </div>
+      </section>
+      <div class="section-separator"></div>
+
+      <section class="pricing">
+        <h2 class="pricing-title">Load your Streamgun</h2>
+        <div class="pricing-desc">Stream without limits on any device.</div>
+        <div class="pricing-billing">
+          <div class="pricing-billing-period">Billed Monthly</div>
+          <div class="pricing-billing-btn"></div>
+          <div class="pricing-billing-period">Billed Yearly</div>
+          <div class="pricing-billing-discount">20% off</div>
+        </div>
+
+        <div class="pricing-packages"></div>
+      </section>
+      <div class="section-separator"></div>
+
+      <section class="order-form">
+        <div class="form-container">
+          <h2 class="form-title">User information</h2>
+          <form action="index.html" class="form">
+            <div class="input-container input-small">
+              <label for="firstname">Name</label>
+              <div class="input-field">
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  class="input-firstname"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="validation-box">
+                <ion-icon
+                  name="warning-outline"
+                  class="validation-icon"
+                ></ion-icon>
+                <div class="validation-text">Invalid input</div>
+              </div>
             </div>
-          </div>
-          <div class="benefit">
-            <ion-icon name="infinite-outline" class="benefit-icon"></ion-icon>
-            <div class="benefit-title">Unlimited streams</div>
-            <div class="benefit-desc">Be creative. Be limitless.</div>
-          </div>
-          <div class="benefit">
-            <ion-icon name="ribbon-outline" class="benefit-icon"></ion-icon>
-            <div class="benefit-title">Streamify Premium</div>
-            <div class="benefit-desc">
-              Download our new streaming app and stream your content as a pro.
+            <div class="input-container input-small">
+              <label for="lastname">Surname</label>
+              <div class="input-field">
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  class="input-lastname"
+                  placeholder="Your Surname"
+                />
+              </div>
+              <div class="validation-box">
+                <ion-icon
+                  name="warning-outline"
+                  class="validation-icon"
+                ></ion-icon>
+                <div class="validation-text">Invalid input</div>
+              </div>
             </div>
-          </div>
-        </section>
+            <div class="input-container input-big">
+              <label for="address">Address</label>
+              <div class="input-field">
+                <span class="material-symbols-outlined"> home_pin </span>
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="input-address"
+                  placeholder="Your Address"
+                />
+              </div>
+              <div class="validation-box">
+                <ion-icon
+                  name="warning-outline"
+                  class="validation-icon"
+                ></ion-icon>
+                <div class="validation-text">Invalid input</div>
+              </div>
+            </div>
+            <div class="input-container input-big">
+              <label for="email">Email</label>
+              <div class="input-field">
+                <span class="material-symbols-outlined"> mail </span>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  class="input-email"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="validation-box">
+                <ion-icon
+                  name="warning-outline"
+                  class="validation-icon"
+                ></ion-icon>
+                <div class="validation-text">Invalid input</div>
+              </div>
+            </div>
+            <div class="input-container input-big">
+              <label for="card">Card Number</label>
+              <div class="input-field">
+                <span class="material-symbols-outlined"> credit_card </span>
+                <input
+                  type="text"
+                  name="card"
+                  id="card"
+                  class="input-card"
+                  placeholder="Card Number"
+                />
+              </div>
+              <div class="validation-box">
+                <ion-icon
+                  name="warning-outline"
+                  class="validation-icon"
+                ></ion-icon>
+                <div class="validation-text">Invalid input</div>
+              </div>
+            </div>
+            <div class="input-container input-small">
+              <label for="cvc">CVC</label>
+              <div class="input-field">
+                <span class="material-symbols-outlined"> vpn_key </span>
+                <input
+                  type="text"
+                  name="cvc"
+                  id="cvc"
+                  class="input-cvc"
+                  placeholder="CVC"
+                />
+              </div>
+              <div class="validation-box">
+                <ion-icon
+                  name="warning-outline"
+                  class="validation-icon"
+                ></ion-icon>
+                <div class="validation-text">Invalid input</div>
+              </div>
+            </div>
+            <div class="input-container input-small">
+              <label for="expiration">Expiration Date</label>
+              <div class="input-field">
+                <span class="material-symbols-outlined"> calendar_today </span>
+                <input
+                  type="text"
+                  name="expiration"
+                  id="expiration"
+                  class="input-expiration"
+                  placeholder="MM/YY"
+                />
+              </div>
+              <div class="validation-box">
+                <ion-icon
+                  name="warning-outline"
+                  class="validation-icon"
+                ></ion-icon>
+                <div class="validation-text">Invalid input</div>
+              </div>
+            </div>
+            <div class="input-container input-big">
+              <label for="coupon">Coupon Code</label>
+              <div class="coupon-container">
+                <div class="input-field">
+                  <input
+                    type="text"
+                    name="coupon"
+                    id="coupon"
+                    class="input-coupon"
+                    placeholder="Code123"
+                  />
+                </div>
+                <div class="btn btn-coupon-apply">Apply</div>
+              </div>
+              <div class="validation-box">
+                <ion-icon
+                  name="warning-outline"
+                  class="validation-icon"
+                ></ion-icon>
+                <div class="validation-text">Invalid input</div>
+              </div>
+            </div>
+            <input
+              type="submit"
+              class="btn input-big btn-submit input-field"
+              value="Complete Payment"
+            />
+          </form>
+        </div>
 
-        <section class="pricing">
-          <h2 class="pricing-title">Load your Streamgun</h2>
-          <div class="pricing-desc">Stream without limits on any device.</div>
-          <div class="pricing-billing">
-            <div class="pricing-billing-period">Billed Monthly</div>
-            <div class="pricing-billing-btn"></div>
-            <div class="pricing-billing-period">Billed Yearly</div>
-            <div class="pricing-billing-discount">20% off</div>
-          </div>
-
-          <div class="pricing-packages"></div>
-        </section>
-
-        <section class="order-form">
-          <div class="form-container">
-            <h2 class="form-title">User information</h2>
-            <form action="index.html" class="form">
-              <div class="input-container input-small">
-                <label for="firstname">Name</label>
-                <div class="input-field">
-                  <input
-                    type="text"
-                    name="firstname"
-                    id="firstname"
-                    class="input-firstname"
-                    placeholder="Your Name"
-                  />
-                </div>
-                <div class="validation-box">
-                  <ion-icon
-                    name="warning-outline"
-                    class="validation-icon"
-                  ></ion-icon>
-                  <div class="validation-text">Invalid input</div>
+        <div class="order-summary">
+          <h2 class="order-title">Order summary</h2>
+          <div class="order-details">
+            <div class="package-details">
+              <div class="package-info">
+                <div class="package-name">Family Package</div>
+                <div class="package-pricing">
+                  <span>$9.99</span> /month after offer period
                 </div>
               </div>
-              <div class="input-container input-small">
-                <label for="lastname">Surname</label>
-                <div class="input-field">
-                  <input
-                    type="text"
-                    name="lastname"
-                    id="lastname"
-                    class="input-lastname"
-                    placeholder="Your Surname"
-                  />
-                </div>
-                <div class="validation-box">
-                  <ion-icon
-                    name="warning-outline"
-                    class="validation-icon"
-                  ></ion-icon>
-                  <div class="validation-text">Invalid input</div>
-                </div>
-              </div>
-              <div class="input-container input-big">
-                <label for="address">Address</label>
-                <div class="input-field">
-                  <span class="material-symbols-outlined"> home_pin </span>
-                  <input
-                    type="text"
-                    name="address"
-                    id="address"
-                    class="input-address"
-                    placeholder="Your Address"
-                  />
-                </div>
-                <div class="validation-box">
-                  <ion-icon
-                    name="warning-outline"
-                    class="validation-icon"
-                  ></ion-icon>
-                  <div class="validation-text">Invalid input</div>
-                </div>
-              </div>
-              <div class="input-container input-big">
-                <label for="email">Email</label>
-                <div class="input-field">
-                  <span class="material-symbols-outlined"> mail </span>
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    class="input-email"
-                    placeholder="Your Email"
-                  />
-                </div>
-                <div class="validation-box">
-                  <ion-icon
-                    name="warning-outline"
-                    class="validation-icon"
-                  ></ion-icon>
-                  <div class="validation-text">Invalid input</div>
-                </div>
-              </div>
-              <div class="input-container input-big">
-                <label for="card">Card Number</label>
-                <div class="input-field">
-                  <span class="material-symbols-outlined"> credit_card </span>
-                  <input
-                    type="text"
-                    name="card"
-                    id="card"
-                    class="input-card"
-                    placeholder="Card Number"
-                  />
-                </div>
-                <div class="validation-box">
-                  <ion-icon
-                    name="warning-outline"
-                    class="validation-icon"
-                  ></ion-icon>
-                  <div class="validation-text">Invalid input</div>
-                </div>
-              </div>
-              <div class="input-container input-small">
-                <label for="cvc">CVC</label>
-                <div class="input-field">
-                  <span class="material-symbols-outlined"> vpn_key </span>
-                  <input
-                    type="text"
-                    name="cvc"
-                    id="cvc"
-                    class="input-cvc"
-                    placeholder="CVC"
-                  />
-                </div>
-                <div class="validation-box">
-                  <ion-icon
-                    name="warning-outline"
-                    class="validation-icon"
-                  ></ion-icon>
-                  <div class="validation-text">Invalid input</div>
-                </div>
-              </div>
-              <div class="input-container input-small">
-                <label for="expiration">Expiration Date</label>
-                <div class="input-field">
-                  <span class="material-symbols-outlined">
-                    calendar_today
-                  </span>
-                  <input
-                    type="text"
-                    name="expiration"
-                    id="expiration"
-                    class="input-expiration"
-                    placeholder="MM/YY"
-                  />
-                </div>
-                <div class="validation-box">
-                  <ion-icon
-                    name="warning-outline"
-                    class="validation-icon"
-                  ></ion-icon>
-                  <div class="validation-text">Invalid input</div>
-                </div>
-              </div>
-              <div class="input-container input-big">
-                <label for="coupon">Coupon Code</label>
-                <div class="coupon-container">
-                  <div class="input-field">
-                    <input
-                      type="text"
-                      name="coupon"
-                      id="coupon"
-                      class="input-coupon"
-                      placeholder="Code123"
-                    />
+              <ul class="package-features">
+                <li class="package-feature">
+                  <span class="material-symbols-outlined"> check_circle </span>
+                  <div>
+                    Up to 7 Premium accounts for family members living under one
+                    roof
                   </div>
-                  <div class="btn btn-coupon-apply">Apply</div>
+                </li>
+                <li class="package-feature">
+                  <span class="material-symbols-outlined"> check_circle </span>
+                  <div>Block explicit content (Kids mode)</div>
+                </li>
+                <li class="package-feature">
+                  <span class="material-symbols-outlined"> check_circle </span>
+                  <div>Stream any content</div>
+                </li>
+                <li class="package-feature">
+                  <span class="material-symbols-outlined"> check_circle </span>
+                  <div>Unlimited streams</div>
+                </li>
+              </ul>
+            </div>
+            <div class="order-details-tab">
+              <div class="order-details-cost">
+                <div class="order-details-price listing">
+                  <span>Price:</span>
+                  <div>$9.99</div>
                 </div>
-                <div class="validation-box">
-                  <ion-icon
-                    name="warning-outline"
-                    class="validation-icon"
-                  ></ion-icon>
-                  <div class="validation-text">Invalid input</div>
-                </div>
-              </div>
-              <input
-                type="submit"
-                class="btn input-big btn-submit input-field"
-                value="Complete Payment"
-              />
-            </form>
-          </div>
-
-          <div class="order-summary">
-            <h2 class="order-title">Order summary</h2>
-            <div class="order-details">
-              <div class="package-details">
-                <div class="package-info">
-                  <div class="package-name">Family Package</div>
-                  <div class="package-pricing">
-                    <span>$9.99</span> /month after offer period
-                  </div>
-                </div>
-                <ul class="package-features">
-                  <li class="package-feature">
-                    <span class="material-symbols-outlined">
-                      check_circle
-                    </span>
-                    <div>
-                      Up to 7 Premium accounts for family members living under
-                      one roof
-                    </div>
-                  </li>
-                  <li class="package-feature">
-                    <span class="material-symbols-outlined">
-                      check_circle
-                    </span>
-                    <div>Block explicit content (Kids mode)</div>
-                  </li>
-                  <li class="package-feature">
-                    <span class="material-symbols-outlined">
-                      check_circle
-                    </span>
-                    <div>Stream any content</div>
-                  </li>
-                  <li class="package-feature">
-                    <span class="material-symbols-outlined">
-                      check_circle
-                    </span>
-                    <div>Unlimited streams</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="order-details-tab">
-                <div class="order-details-cost">
-                  <div class="order-details-price listing">
-                    <span>Price:</span>
-                    <div>$9.99</div>
-                  </div>
-                  <div class="order-details-discount listing">
-                    <span>Discount:</span>
-                    <div>$4.99</div>
-                  </div>
-                </div>
-                <hr class="separator" />
-                <div class="order-details-total listing">
-                  <span>Total:</span>
+                <div class="order-details-discount listing">
+                  <span>Discount:</span>
                   <div>$4.99</div>
                 </div>
               </div>
-            </div>
-            <div class="credit-cards">
-              <div class="credit-cards-title">Powered by</div>
-              <div class="credit-cards-images">
-                <img src="img/cib_cc-stripe.svg" class="credit-card-image" />
-                <img src="img/cib_cc-visa.svg" class="credit-card-image" />
-                <img
-                  src="img/cib_cc-mastercard.svg"
-                  class="credit-card-image"
-                />
+              <hr class="separator" />
+              <div class="order-details-total listing">
+                <span>Total:</span>
+                <div>$4.99</div>
               </div>
             </div>
           </div>
-        </section>
-      </main>
+          <div class="credit-cards">
+            <div class="credit-cards-title">Powered by</div>
+            <div class="credit-cards-images">
+              <img src="img/cib_cc-stripe.svg" class="credit-card-image" />
+              <img src="img/cib_cc-visa.svg" class="credit-card-image" />
+              <img src="img/cib_cc-mastercard.svg" class="credit-card-image" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <footer>Footer</footer>
     </div>

@@ -14,10 +14,16 @@ body {
 .container {
   max-width: 144rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
 }
 section {
-  padding: 2.4rem 9.6rem;
-  border-bottom: 1px solid #6c6c6c;
+  padding: 0 9.6rem;
+}
+.section-separator {
+  margin: 0 9.6rem;
+  border: 1px solid #333333;
 }
 ul {
   list-style: none;
