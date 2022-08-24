@@ -28,10 +28,14 @@ const packages = [
 ];
 
 const packagesEl = document.querySelector(".pricing-packages");
-const packageDetailsEl = document.querySelector(".package-details");
+const orderDetailsEl = document.querySelector(".order-details");
 const togglerEl = document.querySelector(".toggler");
 let yearlyBilling = false;
 let curPkg = packages.at(1);
+
+let price = yearlyBilling ? 12 * 0.8 * curPkg.price : curPkg.price;
+let discount = 0;
+let total = (1 - discount) * price;
 
 const packageEl = document.querySelector(".order-details-package");
 const pricingEl = document.querySelector(".order-details-pricing");
@@ -81,33 +85,58 @@ renderPackages();
 
 function updateOrderSummary() {
   let html = `
-    <div class="package-info">
-      <div class="package-name">${curPkg.title} Package</div>
-      <div class="package-pricing">
-        <span>$${
-          yearlyBilling ? (0.8 * curPkg.price).toFixed(2) : curPkg.price
-        }</span> /month after offer period
+    <div class="package-details">
+      <div class="package-info">
+        <div class="package-name">${curPkg.title} Package</div>
+        <div class="package-pricing">
+          <span>$${
+            yearlyBilling ? (0.8 * curPkg.price).toFixed(2) : curPkg.price
+          }</span> /month after offer period
+        </div>
       </div>
-    </div>
-    <ul class="package-features">
-    `;
+      <ul class="package-features">
+  `;
   curPkg.features.forEach((feat) => {
     html += `
-      <li class="package-feature">
-        <span class="material-symbols-outlined"> check_circle </span>
-        <div>${feat}</div>
-      </li>
+        <li class="package-feature">
+          <span class="material-symbols-outlined"> check_circle </span>
+          <div>${feat}</div>
+        </li>
     `;
   });
   html += `
-    </ul>
+      </ul>
+    </div>
+    <div class="order-details-tab">
+      <div class="order-details-cost">
+        <div class="order-details-price listing">
+          <span>Price:</span>
+          <div>$${price.toFixed(2)}</div>
+        </div>
+        <div class="order-details-discount listing">
+          <span>Discount:</span>
+          <div>$${(discount * price).toFixed(2)}</div>
+        </div>
+      </div>
+      <hr class="separator" />
+      <div class="order-details-total listing">
+        <span>Total:</span>
+        <div>$${total.toFixed(2)}</div>
+      </div>
+    </div>
+  </div>
   `;
-  packageDetailsEl.innerHTML = "";
-  packageDetailsEl.insertAdjacentHTML("afterbegin", html);
+  orderDetailsEl.innerHTML = "";
+  orderDetailsEl.insertAdjacentHTML("afterbegin", html);
 }
 
 function toggleBillingPeriod() {
   yearlyBilling = !yearlyBilling;
+}
+
+function updateBill() {
+  price = yearlyBilling ? 12 * 0.8 * curPkg.price : curPkg.price;
+  total = (1 - discount) * price;
 }
 
 // EVENT LISTENERS
@@ -116,6 +145,7 @@ packagesEl.addEventListener("click", function (e) {
   if (!curPkgEl) return;
 
   curPkg = packages.at(curPkgEl.dataset.id);
+  updateBill();
   updateOrderSummary();
 });
 
@@ -123,6 +153,7 @@ togglerEl.addEventListener("click", function () {
   this.querySelectorAll("img").forEach((img) => img.classList.toggle("hidden"));
 
   toggleBillingPeriod();
+  updateBill();
   renderPackages();
   updateOrderSummary();
 });
