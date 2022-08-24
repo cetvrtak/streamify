@@ -30,6 +30,8 @@ const packages = [
 const packagesEl = document.querySelector(".pricing-packages");
 const packageDetailsEl = document.querySelector(".package-details");
 const togglerEl = document.querySelector(".toggler");
+let yearlyBilling = false;
+let curPkg = packages.at(1);
 
 const packageEl = document.querySelector(".order-details-package");
 const pricingEl = document.querySelector(".order-details-pricing");
@@ -39,6 +41,7 @@ const discountEl = document.querySelector(".order-details-discount");
 
 // FUNCTIONS
 function renderPackages() {
+  packagesEl.innerHTML = "";
   packages.forEach((pkg) => {
     let html = `
       <div class="pricing-package" data-id="${packages.indexOf(pkg)}">
@@ -47,7 +50,9 @@ function renderPackages() {
           1 month <span class="green">free</span>
         </div>
         <div class="pricing-package-pricing">
-          <span>$${pkg.price}</span>
+          <span>$${
+            yearlyBilling ? (0.8 * pkg.price).toFixed(2) : pkg.price
+          }</span>
           <div>/month after offer period</div>
         </div>
         <ul class="pricing-package-features">
@@ -74,17 +79,19 @@ function renderPackages() {
 }
 renderPackages();
 
-function updateOrderSummary(pkg) {
+function updateOrderSummary() {
   let html = `
     <div class="package-info">
-      <div class="package-name">${pkg.title} Package</div>
+      <div class="package-name">${curPkg.title} Package</div>
       <div class="package-pricing">
-        <span>$${pkg.price}</span> /month after offer period
+        <span>$${
+          yearlyBilling ? (0.8 * curPkg.price).toFixed(2) : curPkg.price
+        }</span> /month after offer period
       </div>
     </div>
     <ul class="package-features">
     `;
-  pkg.features.forEach((feat) => {
+  curPkg.features.forEach((feat) => {
     html += `
       <li class="package-feature">
         <span class="material-symbols-outlined"> check_circle </span>
@@ -99,15 +106,23 @@ function updateOrderSummary(pkg) {
   packageDetailsEl.insertAdjacentHTML("afterbegin", html);
 }
 
+function toggleBillingPeriod() {
+  yearlyBilling = !yearlyBilling;
+}
+
 // EVENT LISTENERS
 packagesEl.addEventListener("click", function (e) {
-  const selectedPackageEl = e.target.closest(".pricing-package");
-  if (!selectedPackageEl) return;
+  const curPkgEl = e.target.closest(".pricing-package");
+  if (!curPkgEl) return;
 
-  const selectedPackage = packages.at(selectedPackageEl.dataset.id);
-  updateOrderSummary(selectedPackage);
+  curPkg = packages.at(curPkgEl.dataset.id);
+  updateOrderSummary();
 });
 
 togglerEl.addEventListener("click", function () {
   this.querySelectorAll("img").forEach((img) => img.classList.toggle("hidden"));
+
+  toggleBillingPeriod();
+  renderPackages();
+  updateOrderSummary();
 });
