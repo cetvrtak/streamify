@@ -74,6 +74,9 @@ input {
 .green {
   color: #a6d51e;
 }
+.hidden {
+  display: none;
+}
 
 /* ICONS */
 .material-symbols-outlined {

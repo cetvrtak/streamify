@@ -29,6 +29,7 @@ const packages = [
 
 const packagesEl = document.querySelector(".pricing-packages");
 const packageDetailsEl = document.querySelector(".package-details");
+const togglerEl = document.querySelector(".toggler");
 
 const packageEl = document.querySelector(".order-details-package");
 const pricingEl = document.querySelector(".order-details-pricing");
@@ -105,4 +106,8 @@ packagesEl.addEventListener("click", function (e) {
 
   const selectedPackage = packages.at(selectedPackageEl.dataset.id);
   updateOrderSummary(selectedPackage);
+});
+
+togglerEl.addEventListener("click", function () {
+  this.querySelectorAll("img").forEach((img) => img.classList.toggle("hidden"));
 });

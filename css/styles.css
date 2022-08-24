@@ -47,19 +47,19 @@
   padding: 0.8rem;
   gap: 1.6rem;
 
-  width: 35rem;
-  height: 4.8rem;
+  width: 36rem;
 
   background: #eceffa;
   border-radius: 0.8rem;
 
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #121518;
 
   margin: 0 auto 5.2rem;
 }
 .pricing-billing-period {
   font-size: 1.6rem;
+  line-height: 2.4rem;
 }
 .pricing-billing-discount {
   font-size: 1.4rem;
@@ -79,7 +79,7 @@
   border: 1px solid #eceffa;
   border-radius: 8px;
   padding: 2.4rem;
-  max-width: 33.6rem;
+  max-width: 33.7rem;
 }
 .pricing-package-title {
   font-weight: 700;
