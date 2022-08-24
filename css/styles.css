@@ -5,10 +5,10 @@
 
 /* MAIN */
 .benefits {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 3.2rem;
+  gap: 2.4rem;
 }
 .benefit {
   display: flex;
@@ -21,6 +21,7 @@
 }
 .benefit-title {
   font-size: 3rem;
+  text-transform: uppercase;
 }
 .benefit-desc {
   font-size: 1.2rem;
