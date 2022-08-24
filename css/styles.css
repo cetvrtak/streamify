@@ -193,6 +193,11 @@
 .input-field span {
   color: #a2a2a2;
 }
+.visibility {
+  /* Setting the height to match the icon height, otherwise it expands by 3px when displaying the icon */
+  height: 2.4rem;
+  cursor: pointer;
+}
 .coupon-container {
   display: flex;
   align-items: center;

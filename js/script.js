@@ -37,6 +37,9 @@ let price = yearlyBilling ? 12 * 0.8 * curPkg.price : curPkg.price;
 let discount = 0;
 let total = (1 - discount) * price;
 
+const cvcEl = document.querySelector(".input-cvc");
+const visibilityEl = document.querySelector(".visibility");
+
 const packageEl = document.querySelector(".order-details-package");
 const pricingEl = document.querySelector(".order-details-pricing");
 const featuresEl = document.querySelector(".order-details-features");
@@ -156,4 +159,14 @@ togglerEl.addEventListener("click", function () {
   updateBill();
   renderPackages();
   updateOrderSummary();
+});
+
+cvcEl.addEventListener("click", function () {
+  visibilityEl.classList.remove("hidden");
+});
+
+visibilityEl.addEventListener("click", function () {
+  this.querySelectorAll("span").forEach((el) => el.classList.toggle("hidden"));
+
+  cvcEl.type == "password" ? (cvcEl.type = "text") : (cvcEl.type = "password");
 });
