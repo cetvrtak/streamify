@@ -37,8 +37,16 @@ let price = yearlyBilling ? 12 * 0.8 * curPkg.price : curPkg.price;
 let discount = 0;
 let total = (1 - discount) * price;
 
+const firstnameEl = document.querySelector(".input-firstname");
+const lastnameEl = document.querySelector(".input-lastname");
+const addressEl = document.querySelector(".input-address");
+const emailEl = document.querySelector(".input-email");
+const cardEl = document.querySelector(".input-card");
 const cvcEl = document.querySelector(".input-cvc");
 const visibilityEl = document.querySelector(".visibility");
+const expirationEl = document.querySelector(".input-expiration");
+const couponEl = document.querySelector(".input-coupon");
+const btnSubmit = document.querySelector(".btn-submit");
 
 const packageEl = document.querySelector(".order-details-package");
 const pricingEl = document.querySelector(".order-details-pricing");
@@ -142,6 +150,66 @@ function updateBill() {
   total = (1 - discount) * price;
 }
 
+// VALIDATION
+function validateForm() {
+  const firstnameValid = validate(
+    firstnameEl,
+    /[a-zA-Z]{3,20}$/.test(firstnameEl.value)
+  );
+  const lastnameValid = validate(
+    lastnameEl,
+    /[a-zA-Z]{3,20}$/.test(lastnameEl.value)
+  );
+  const addressValid = validate(
+    addressEl,
+    /[a-zA-Z0-9\s]+ (\d|b{2})+(\,)? (\d{5,6}) [a-zA-Z0-9\s]+$/.test(
+      addressEl.value
+    )
+  );
+  const emailValid = validate(
+    emailEl,
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      emailEl.value
+    )
+  );
+  const cardValid = validate(
+    cardEl,
+    /((\d{4})[''\s-]?){4}$/.test(cardEl.value)
+  );
+  const cvcValid = validate(cvcEl, /\d{3,4}$/.test(cvcEl.value));
+  const expirationValid = validate(
+    expirationEl,
+    /\d{2}[/]\d{2}$/.test(expirationEl.value)
+  );
+  const couponValid = validate(couponEl, /\w+$/.test(couponEl.value));
+
+  return (
+    firstnameValid &&
+    lastnameValid &&
+    addressValid &&
+    emailValid &&
+    cardValid &&
+    cvcValid &&
+    expirationValid &&
+    couponValid
+  );
+}
+
+function validate(el, test) {
+  // If test not passed - display error message
+  if (!test) {
+    el.closest(".input-container")
+      .querySelector(".validation-box")
+      .classList.remove("invisible");
+    return;
+  } else {
+    el.closest(".input-container")
+      .querySelector(".validation-box")
+      .classList.add("invisible");
+  }
+  return true;
+}
+
 // EVENT LISTENERS
 packagesEl.addEventListener("click", function (e) {
   const curPkgEl = e.target.closest(".pricing-package");
@@ -169,4 +237,9 @@ visibilityEl.addEventListener("click", function () {
   this.querySelectorAll("span").forEach((el) => el.classList.toggle("hidden"));
 
   cvcEl.type == "password" ? (cvcEl.type = "text") : (cvcEl.type = "password");
+});
+
+btnSubmit.addEventListener("click", function (e) {
+  e.preventDefault();
+  validateForm();
 });

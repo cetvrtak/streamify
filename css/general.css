@@ -60,8 +60,6 @@ input {
   font-size: 1.4rem;
   line-height: 1.6rem;
   color: #d73939;
-
-  visibility: hidden;
 }
 .btn {
   border: none;
@@ -77,6 +75,9 @@ input {
 }
 .hidden {
   display: none;
+}
+.invisible {
+  visibility: hidden;
 }
 
 /* ICONS */
