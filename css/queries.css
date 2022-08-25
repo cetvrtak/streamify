@@ -17,6 +17,28 @@
   .section-separator {
     margin: 0 1.6rem;
   }
+
+  /* MODAL */
+  .modal {
+    width: 90%;
+    padding: 1.6rem;
+  }
+  .modal-close {
+    position: relative;
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
+  .modal-items-container {
+    gap: 1.6rem;
+  }
+  .modal-desc {
+    font-size: 2rem;
+  }
+  .coupon-form {
+    width: 100%;
+  }
+
   .benefits {
     grid-template-columns: 1fr;
     gap: 4.8rem;

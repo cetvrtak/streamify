@@ -3,6 +3,91 @@
   width: 100%;
 }
 
+/* MODAL */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* backdrop-filter: blur(3px); */
+  z-index: 5;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: #121518;
+  padding: 2.4rem 4.8rem;
+  border-radius: 8px;
+  width: 40%;
+}
+.modal-items-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  margin: 0 auto;
+
+  text-align: center;
+  color: #ffffff;
+
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 2.4rem;
+  right: 2.4rem;
+  cursor: pointer;
+}
+.modal-gifts {
+  width: 35%;
+}
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+.modal-title {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+}
+.modal-desc {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+.coupon-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 60%;
+}
+.coupon-form .input-container {
+  gap: 0.4rem;
+  width: 100%;
+}
+.coupon-form .input-email {
+  background-color: #121518;
+}
+.coupon-form-submit {
+  background-color: #4d1ed5;
+  color: #eceffa;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 2.4rem;
+
+  margin-bottom: 7.4rem;
+  padding: 1.2rem 2.4rem;
+  box-shadow: 0px 4px 4px rgba(13, 13, 13, 0.25);
+  border-radius: 8px;
+}
+
 /* MAIN */
 .benefits {
   display: grid;
@@ -165,7 +250,7 @@
   align-items: flex-start;
   gap: 2.4rem;
 }
-.form {
+.user-info-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: flex-start;
@@ -193,6 +278,9 @@
 }
 .input-field span {
   color: #a2a2a2;
+}
+.input-field input {
+  background-color: #eceffa;
 }
 .visibility {
   /* Setting the height to match the icon height, otherwise it expands by 3px when displaying the icon */

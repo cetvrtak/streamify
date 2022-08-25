@@ -33,6 +33,51 @@
         />
       </header>
 
+      <div class="overlay hidden"></div>
+      <div class="modal">
+        <div class="modal-close">
+          <span class="material-symbols-outlined"> close </span>
+        </div>
+        <div class="modal-items-container">
+          <img
+            class="modal-gifts"
+            src="img/christmas-gift.svg"
+            alt="Cheerful Christmas Gifts"
+          />
+          <div class="modal-info">
+            <span class="modal-title">Take 50% OFF your first purchase</span>
+            <span class="modal-desc"
+              >Enter your email address below to get started</span
+            >
+          </div>
+          <form action="#" class="coupon-form">
+            <div class="input-container">
+              <div class="input-field">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  class="input-email"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="validation-box invisible">
+                <ion-icon
+                  name="warning-outline"
+                  class="validation-icon"
+                ></ion-icon>
+                <div class="validation-text">Invalid input</div>
+              </div>
+            </div>
+            <input
+              type="submit"
+              class="btn coupon-form-submit"
+              value="Get Discount Now"
+            />
+          </form>
+        </div>
+      </div>
+
       <section class="benefits">
         <div class="benefit">
           <ion-icon name="wifi-outline" class="benefit-icon"></ion-icon>
@@ -84,7 +129,7 @@
       <section class="order-form">
         <div class="form-container">
           <h2 class="form-title">User information</h2>
-          <form action="index.html" class="form">
+          <form action="index.html" class="user-info-form">
             <div class="input-container input-small">
               <label for="firstname">Name</label>
               <div class="input-field">
