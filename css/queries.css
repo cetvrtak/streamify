@@ -39,10 +39,28 @@
     width: 100%;
   }
 
+  /* BENEFITS */
   .benefits {
     grid-template-columns: 1fr;
     gap: 4.8rem;
   }
+
+  /* COMMNENTS */
+  .comments {
+    grid-template-columns: repeat(fit-content, 1fr);
+  }
+  .comment-author-avatar {
+    grid-row: 1 / span 1;
+    margin: 0;
+  }
+  .comment-author-details {
+    justify-content: start;
+  }
+  .comment-author-text {
+    grid-column: 1 / -1;
+  }
+
+  /* PRICING */
   .pricing-billing {
     width: auto;
     margin: 0 auto 1.6rem;
