@@ -48,6 +48,10 @@ const expirationEl = document.querySelector(".input-expiration");
 const couponEl = document.querySelector(".input-coupon");
 const btnSubmit = document.querySelector(".btn-submit");
 
+const modalEl = document.querySelector(".modal");
+const overlayEl = document.querySelector(".overlay");
+const modalCloseEl = document.querySelector(".modal-close");
+
 const packageEl = document.querySelector(".order-details-package");
 const pricingEl = document.querySelector(".order-details-pricing");
 const featuresEl = document.querySelector(".order-details-features");
@@ -210,6 +214,12 @@ function validate(el, test) {
   return true;
 }
 
+// MODAL
+function closeModal() {
+  modalEl.classList.add("hidden");
+  overlayEl.classList.add("hidden");
+}
+
 // EVENT LISTENERS
 packagesEl.addEventListener("click", function (e) {
   const curPkgEl = e.target.closest(".pricing-package");
@@ -243,3 +253,6 @@ btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   validateForm();
 });
+
+overlayEl.addEventListener("click", closeModal);
+modalCloseEl.addEventListener("click", closeModal);
