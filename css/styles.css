@@ -141,6 +141,7 @@
 .pricing-package:nth-child(2) .choose-now {
   background: #4d1ed5;
   color: #eceffa;
+  border: none;
 }
 .pricing-package-terms {
   font-size: 1.2rem;

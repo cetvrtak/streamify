@@ -8,12 +8,34 @@
   html {
     font-size: 40%;
   }
+  .container {
+    gap: 1.6rem;
+  }
+  section {
+    padding: 0 1.6rem;
+  }
+  .section-separator {
+    margin: 0 1.6rem;
+  }
   .benefits {
     grid-template-columns: 1fr;
     gap: 4.8rem;
   }
   .pricing-packages {
-    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0;
+    padding: 0 3.6rem;
+  }
+  .pricing-package {
+    flex: 0 0 auto;
+    max-width: none;
+    width: 100%;
+    transform: translateX(100%);
+    margin-right: 2.4rem;
+  }
+  .pricing-package:nth-child(2) {
+    order: -1;
   }
   .order-form {
     grid-template-columns: 1fr;
