@@ -206,6 +206,12 @@
   line-height: 2.4rem;
   color: #a6d51e;
 }
+.comments-load:hover,
+.choose-now:hover {
+  background: #a6d51e;
+  box-shadow: 0px 4px 4px rgba(13, 13, 13, 0.25);
+  color: #121518;
+}
 
 /* PRICING */
 .pricing {
@@ -322,6 +328,11 @@
   background: #4d1ed5;
   color: #eceffa;
   border: none;
+}
+.pricing-package:nth-child(2) .choose-now:hover,
+.btn-submit:hover {
+  background: #351593;
+  box-shadow: 0px 4px 4px rgba(13, 13, 13, 0.25);
 }
 .pricing-package-terms {
   font-size: 1.2rem;
