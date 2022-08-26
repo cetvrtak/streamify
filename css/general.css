@@ -70,8 +70,8 @@ input {
   width: 100%;
 }
 .free {
-  color: #a6d51e !important;
-  font-weight: 700 !important;
+  color: #a6d51e;
+  font-weight: 700;
 }
 .hidden {
   display: none !important;
