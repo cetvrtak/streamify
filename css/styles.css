@@ -135,7 +135,7 @@
   border-bottom: 1px solid #6c6c6c;
 
   display: grid;
-  grid-template-columns: auto 2fr 1fr;
+  grid-template-columns: auto 1fr 1fr;
   row-gap: 1.3rem;
 }
 .comment-author-avatar {
