@@ -69,14 +69,14 @@ input {
   width: 100%;
 }
 .free {
-  color: #a6d51e;
-  font-weight: 700;
+  color: #a6d51e !important;
+  font-weight: 700 !important;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .invisible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 /* ICONS */
