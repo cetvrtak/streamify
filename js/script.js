@@ -246,7 +246,10 @@ function renderFiveComments() {
 
   const nextFiveComments = comments.slice(commCounter, commCounter + 5);
 
+  const locale = navigator.language;
   nextFiveComments.forEach((comment) => {
+    const date = new Date(comment.postedAt);
+    const dateFormatted = new Intl.DateTimeFormat(locale).format(date);
     const html = `
       <figure class="comment-box">
         <img
@@ -263,7 +266,7 @@ function renderFiveComments() {
             <span class="material-symbols-outlined comment-calendar-icon">
               calendar_today
             </span>
-            <span class="comment-date">${comment.postedAt}</span>
+            <span class="comment-date">${dateFormatted}</span>
           </div>
         </div>
         <p class="comment-author-text">${comment.comment}</p>
