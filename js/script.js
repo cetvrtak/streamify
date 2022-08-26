@@ -42,15 +42,15 @@ let price = yearlyBilling ? 12 * 0.8 * curPkg.price : curPkg.price;
 let discount = 0;
 let total = (1 - discount) * price;
 
-const firstnameEl = document.querySelector(".input-firstname");
-const lastnameEl = document.querySelector(".input-lastname");
-const addressEl = document.querySelector(".input-address");
-const emailEl = document.querySelector(".input-email");
-const cardEl = document.querySelector(".input-card");
-const cvcEl = document.querySelector(".input-cvc");
+const firstnameEl = document.querySelector("#firstname");
+const lastnameEl = document.querySelector("#lastname");
+const addressEl = document.querySelector("#address");
+const emailEl = document.querySelector("#email");
+const cardEl = document.querySelector("#card");
+const cvcEl = document.querySelector("#cvc");
 const visibilityEl = document.querySelector(".visibility");
-const expirationEl = document.querySelector(".input-expiration");
-const couponEl = document.querySelector(".input-coupon");
+const expirationEl = document.querySelector("#expiration");
+const couponEl = document.querySelector("#coupon");
 const btnSubmit = document.querySelector(".btn-submit");
 
 const modalEl = document.querySelector(".modal");
@@ -163,17 +163,15 @@ function updateBill() {
 function validateForm() {
   const firstnameValid = validate(
     firstnameEl,
-    /[a-zA-Z]{3,20}$/.test(firstnameEl.value)
+    /^[a-zA-Z]{3,20}$/.test(firstnameEl.value)
   );
   const lastnameValid = validate(
     lastnameEl,
-    /[a-zA-Z]{3,20}$/.test(lastnameEl.value)
+    /^[a-zA-Z]{3,20}$/.test(lastnameEl.value)
   );
   const addressValid = validate(
     addressEl,
-    /[a-zA-Z0-9\s]+ (\d|b{2})+(\,)? (\d{5,6}) [a-zA-Z0-9\s]+$/.test(
-      addressEl.value
-    )
+    /^[a-zA-Z0-9\s\.]+ (\d|b{2})+([\,\s\w]+)?$/.test(addressEl.value)
   );
   const emailValid = validate(
     emailEl,
@@ -183,14 +181,14 @@ function validateForm() {
   );
   const cardValid = validate(
     cardEl,
-    /((\d{4})[''\s-]?){4}$/.test(cardEl.value)
+    /^((\d{4})[''\s-]?){4}$/.test(cardEl.value)
   );
-  const cvcValid = validate(cvcEl, /\d{3,4}$/.test(cvcEl.value));
+  const cvcValid = validate(cvcEl, /^\d{3,4}$/.test(cvcEl.value));
   const expirationValid = validate(
     expirationEl,
-    /\d{2}[/]\d{2}$/.test(expirationEl.value)
+    /^\d{2}[/]\d{2}$/.test(expirationEl.value)
   );
-  const couponValid = validate(couponEl, /\w+$/.test(couponEl.value));
+  const couponValid = validate(couponEl, /^\w+$/.test(couponEl.value));
 
   return (
     firstnameValid &&
@@ -311,7 +309,7 @@ visibilityEl.addEventListener("click", function () {
 
 btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
-  validateForm();
+  if (!validateForm()) return;
 });
 
 overlayEl.addEventListener("click", closeModal);
