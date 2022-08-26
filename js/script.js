@@ -27,6 +27,8 @@ const packages = [
   },
 ];
 
+const commentsEl = document.querySelector(".comments-container");
+
 const packagesEl = document.querySelector(".pricing-packages");
 const orderDetailsEl = document.querySelector(".order-details");
 const togglerEl = document.querySelector(".toggler");
@@ -219,6 +221,54 @@ function closeModal() {
   modalEl.classList.add("hidden");
   overlayEl.classList.add("hidden");
 }
+
+// COMMENTS
+let commentsCounter = 0;
+async function renderFiveComments() {
+  try {
+    const response = await fetch(
+      "https://mockend.com/Infomedia-bl/fake-api/comments"
+    );
+    if (!response.ok) throw new Error("Failed to fetch comments 🍕");
+
+    const data = await response.json();
+
+    for (let i = commentsCounter + 1; i < commentsCounter + 6; i++) {
+      const comment = data[i];
+
+      // data.forEach((comment) => {
+      const html = `
+        <figure class="comment-box ${
+          data.indexOf(comment) > 4 ? "hidden" : ""
+        }">
+          <img
+            src="${comment.avatarUrl}"
+            alt="${comment.name}'s Avatar"
+            class="comment-author-avatar"
+          />
+          <div class="comment-author-details">
+            <span class="comment-author-name">${comment.name}</span>
+            <span class="comment-author-email">${comment.email}</span>
+          </div>
+          <div class="comment-date-container">
+            <div class="comment-date-box">
+              <span class="material-symbols-outlined comment-calendar-icon">
+                calendar_today
+              </span>
+              <span class="comment-date">${comment.postedAt}</span>
+            </div>
+          </div>
+          <p class="comment-author-text">${comment.comment}</p>
+        </figure>
+      `;
+      commentsEl.insertAdjacentHTML("beforeend", html);
+    }
+    // });
+  } catch (err) {
+    console.error(err, err.message);
+  }
+}
+renderFiveComments();
 
 // EVENT LISTENERS
 packagesEl.addEventListener("click", function (e) {
