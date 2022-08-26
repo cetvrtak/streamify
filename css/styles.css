@@ -189,6 +189,23 @@
   line-height: 1.6rem;
   margin-bottom: 3.5rem;
 }
+.comments-load {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 9.2rem;
+  gap: 0.8rem;
+  border: 1px solid #a6d51e;
+  filter: drop-shadow(0px 4px 4px rgba(13, 13, 13, 0.25));
+  border-radius: 8px;
+}
+.comments-load span {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #a6d51e;
+}
 
 /* PRICING */
 .pricing {
