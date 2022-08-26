@@ -310,6 +310,15 @@ visibilityEl.addEventListener("click", function () {
 btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   if (!validateForm()) return;
+
+  console.log(firstnameEl.value);
+  console.log(lastnameEl.value);
+  console.log(addressEl.value);
+  console.log(emailEl.value);
+  console.log(cardEl.value);
+  console.log(cvcEl.value);
+  console.log(expirationEl.value);
+  console.log(couponEl.value);
 });
 
 overlayEl.addEventListener("click", closeModal);
