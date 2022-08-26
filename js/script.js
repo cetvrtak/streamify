@@ -28,6 +28,7 @@ const packages = [
 ];
 
 const commentsEl = document.querySelector(".comments-container");
+const commentsLoadMoreEl = document.querySelector(".comments-load");
 
 const packagesEl = document.querySelector(".pricing-packages");
 const orderDetailsEl = document.querySelector(".order-details");
@@ -223,8 +224,9 @@ function closeModal() {
 }
 
 // COMMENTS
+let comments;
 let commentsCounter = 0;
-async function renderFiveComments() {
+async function fetchComments() {
   try {
     const response = await fetch(
       "https://mockend.com/Infomedia-bl/fake-api/comments"
@@ -232,43 +234,51 @@ async function renderFiveComments() {
     if (!response.ok) throw new Error("Failed to fetch comments 🍕");
 
     const data = await response.json();
-
-    for (let i = commentsCounter + 1; i < commentsCounter + 6; i++) {
-      const comment = data[i];
-
-      // data.forEach((comment) => {
-      const html = `
-        <figure class="comment-box ${
-          data.indexOf(comment) > 4 ? "hidden" : ""
-        }">
-          <img
-            src="${comment.avatarUrl}"
-            alt="${comment.name}'s Avatar"
-            class="comment-author-avatar"
-          />
-          <div class="comment-author-details">
-            <span class="comment-author-name">${comment.name}</span>
-            <span class="comment-author-email">${comment.email}</span>
-          </div>
-          <div class="comment-date-container">
-            <div class="comment-date-box">
-              <span class="material-symbols-outlined comment-calendar-icon">
-                calendar_today
-              </span>
-              <span class="comment-date">${comment.postedAt}</span>
-            </div>
-          </div>
-          <p class="comment-author-text">${comment.comment}</p>
-        </figure>
-      `;
-      commentsEl.insertAdjacentHTML("beforeend", html);
-    }
-    // });
+    comments = Array.from(data).slice(87);
+    renderFiveComments();
   } catch (err) {
     console.error(err, err.message);
   }
 }
-renderFiveComments();
+fetchComments();
+
+function renderFiveComments() {
+  if (commentsCounter >= comments.length) return;
+
+  for (let i = commentsCounter; i < commentsCounter + 5; i++) {
+    const comment = comments?.at(i);
+    if (!comment) {
+      commentsCounter = i;
+      return;
+    }
+
+    const html = `
+      <figure class="comment-box">
+        <img
+          src="${comment.avatarUrl}"
+          alt="${comment.name}'s Avatar"
+          class="comment-author-avatar"
+        />
+        <div class="comment-author-details">
+          <span class="comment-author-name">${comment.name}</span>
+          <span class="comment-author-email">${comment.email}</span>
+        </div>
+        <div class="comment-date-container">
+          <div class="comment-date-box">
+            <span class="material-symbols-outlined comment-calendar-icon">
+              calendar_today
+            </span>
+            <span class="comment-date">${comment.postedAt}</span>
+          </div>
+        </div>
+        <p class="comment-author-text">${comment.comment}</p>
+      </figure>
+    `;
+    commentsEl.insertAdjacentHTML("beforeend", html);
+  }
+
+  commentsCounter += 5;
+}
 
 // EVENT LISTENERS
 packagesEl.addEventListener("click", function (e) {
@@ -306,3 +316,6 @@ btnSubmit.addEventListener("click", function (e) {
 
 overlayEl.addEventListener("click", closeModal);
 modalCloseEl.addEventListener("click", closeModal);
+
+/*** Comments  ***/
+commentsLoadMoreEl.addEventListener("click", renderFiveComments);
