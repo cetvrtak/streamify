@@ -10,6 +10,7 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #121518;
   color: #eceffa;
+  overflow: hidden;
 }
 .container {
   max-width: 144rem;

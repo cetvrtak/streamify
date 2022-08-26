@@ -27,6 +27,8 @@ const packages = [
   },
 ];
 
+const bodyEl = document.querySelector("body");
+
 const commentsEl = document.querySelector(".comments-container");
 const commentsLoadMoreEl = document.querySelector(".comments-load");
 
@@ -221,6 +223,7 @@ function validate(el, test) {
 function closeModal() {
   modalEl.classList.add("hidden");
   overlayEl.classList.add("hidden");
+  bodyEl.style.overflow = "auto";
 }
 
 // COMMENTS
