@@ -232,8 +232,7 @@ async function fetchComments() {
     );
     if (!response.ok) throw new Error("Failed to fetch comments 🍕");
 
-    const data = await response.json();
-    comments = Array.from(data).slice(87);
+    comments = await response.json();
     renderFiveComments();
   } catch (err) {
     console.error(err, err.message);
