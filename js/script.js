@@ -280,8 +280,10 @@ function renderFiveComments() {
 
 // EVENT LISTENERS
 packagesEl.addEventListener("click", function (e) {
+  const chooseNowEl = e.target.closest(".choose-now");
+  if (!chooseNowEl) return;
+
   const curPkgEl = e.target.closest(".pricing-package");
-  if (!curPkgEl) return;
 
   curPkg = packages.at(curPkgEl.dataset.id);
   updateBill();
