@@ -225,7 +225,6 @@ function closeModal() {
 
 // COMMENTS
 let comments;
-let commentsCounter = 0;
 async function fetchComments() {
   try {
     const response = await fetch(
@@ -242,16 +241,13 @@ async function fetchComments() {
 }
 fetchComments();
 
+let commCounter = 0;
 function renderFiveComments() {
-  if (commentsCounter >= comments.length) return;
+  if (commCounter > comments.length) return;
 
-  for (let i = commentsCounter; i < commentsCounter + 5; i++) {
-    const comment = comments?.at(i);
-    if (!comment) {
-      commentsCounter = i;
-      return;
-    }
+  const nextFiveComments = comments.slice(commCounter, commCounter + 5);
 
+  nextFiveComments.forEach((comment) => {
     const html = `
       <figure class="comment-box">
         <img
@@ -275,9 +271,8 @@ function renderFiveComments() {
       </figure>
     `;
     commentsEl.insertAdjacentHTML("beforeend", html);
-  }
-
-  commentsCounter += 5;
+    commCounter++;
+  });
 }
 
 // EVENT LISTENERS
