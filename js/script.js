@@ -29,6 +29,9 @@ const packages = [
 
 const bodyEl = document.querySelector("body");
 
+const btnGetDiscount = document.querySelector(".coupon-form-submit");
+const couponEmailEl = document.querySelector("#email-coupon");
+
 const commentsEl = document.querySelector(".comments-container");
 const commentsLoadMoreEl = document.querySelector(".comments-load");
 
@@ -163,7 +166,7 @@ function updateBill() {
   total = (1 - discount) * price;
 }
 
-// VALIDATION
+/*** Validation ***/
 function validateForm() {
   const firstnameValid = validate(firstnameEl, /^[a-zA-Z]{3,20}$/);
   const lastnameValid = validate(lastnameEl, /^[a-zA-Z]{3,20}$/);
@@ -204,14 +207,14 @@ function validate(el, regex) {
   return isTestPassed;
 }
 
-// MODAL
+/*** Modal ***/
 function closeModal() {
   modalEl.classList.add("hidden");
   overlayEl.classList.add("hidden");
   bodyEl.style.overflow = "auto";
 }
 
-// COMMENTS
+/*** Comments ***/
 let comments;
 async function fetchComments() {
   try {
@@ -265,6 +268,11 @@ function renderFiveComments() {
   });
 }
 
+/*** Coupon ***/
+function getCouponCode(email) {
+  return "asD$j7";
+}
+
 // EVENT LISTENERS
 packagesEl.addEventListener("click", function (e) {
   const chooseNowEl = e.target.closest(".choose-now");
@@ -315,3 +323,16 @@ modalCloseEl.addEventListener("click", closeModal);
 
 /*** Comments  ***/
 commentsLoadMoreEl.addEventListener("click", renderFiveComments);
+
+/*** Coupon ***/
+btnGetDiscount.addEventListener("click", function (e) {
+  e.preventDefault();
+  const isEmailValid = validate(couponEmailEl, emailValidationRegex);
+  if (!isEmailValid) return;
+
+  emailEl.value = localStorage.user = couponEmailEl.value;
+  closeModal();
+
+  const couponCode = getCouponCode(localStorage.user);
+  if (couponCode) couponEl.value = couponCode;
+});
