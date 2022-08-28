@@ -53,6 +53,10 @@ const expirationEl = document.querySelector("#expiration");
 const couponEl = document.querySelector("#coupon");
 const btnSubmit = document.querySelector(".btn-submit");
 
+/*** Validation regexes ***/
+const emailValidationRegex =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 const modalEl = document.querySelector(".modal");
 const overlayEl = document.querySelector(".overlay");
 const modalCloseEl = document.querySelector(".modal-close");
@@ -161,34 +165,17 @@ function updateBill() {
 
 // VALIDATION
 function validateForm() {
-  const firstnameValid = validate(
-    firstnameEl,
-    /^[a-zA-Z]{3,20}$/.test(firstnameEl.value)
-  );
-  const lastnameValid = validate(
-    lastnameEl,
-    /^[a-zA-Z]{3,20}$/.test(lastnameEl.value)
-  );
+  const firstnameValid = validate(firstnameEl, /^[a-zA-Z]{3,20}$/);
+  const lastnameValid = validate(lastnameEl, /^[a-zA-Z]{3,20}$/);
   const addressValid = validate(
     addressEl,
-    /^[a-zA-Z0-9\s\.]+ (\d|b{2})+([\,\s\w]+)?$/.test(addressEl.value)
+    /^[a-zA-Z0-9\s\.]+ (\d|b{2})+([\,\s\w]+)?$/
   );
-  const emailValid = validate(
-    emailEl,
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-      emailEl.value
-    )
-  );
-  const cardValid = validate(
-    cardEl,
-    /^((\d{4})[''\s-]?){4}$/.test(cardEl.value)
-  );
-  const cvcValid = validate(cvcEl, /^\d{3,4}$/.test(cvcEl.value));
-  const expirationValid = validate(
-    expirationEl,
-    /^\d{2}[/]\d{2}$/.test(expirationEl.value)
-  );
-  const couponValid = validate(couponEl, /^\w+$/.test(couponEl.value));
+  const emailValid = validate(emailEl, emailValidationRegex);
+  const cardValid = validate(cardEl, /^((\d{4})[''\s-]?){4}$/);
+  const cvcValid = validate(cvcEl, /^\d{3,4}$/);
+  const expirationValid = validate(expirationEl, /^\d{2}[/]\d{2}$/);
+  const couponValid = validate(couponEl, /^\w+$/);
 
   return (
     firstnameValid &&
@@ -202,19 +189,19 @@ function validateForm() {
   );
 }
 
-function validate(el, test) {
+function validate(el, regex) {
+  const isTestPassed = regex.test(el.value);
   // If test not passed - display error message
-  if (!test) {
+  if (!isTestPassed) {
     el.closest(".input-container")
       .querySelector(".validation-box")
       .classList.remove("invisible");
-    return;
   } else {
     el.closest(".input-container")
       .querySelector(".validation-box")
       .classList.add("invisible");
   }
-  return true;
+  return isTestPassed;
 }
 
 // MODAL
