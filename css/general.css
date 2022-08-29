@@ -78,6 +78,9 @@ input {
 .invisible {
   visibility: hidden !important;
 }
+.no-scroll {
+  overflow: hidden;
+}
 
 /* ICONS */
 .material-symbols-outlined {
