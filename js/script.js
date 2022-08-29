@@ -275,7 +275,10 @@ function renderFiveComments() {
 }
 
 /*** Coupon ***/
-function getCouponCode(email) {
+async function getCouponCode(email) {
+  const response = await fetch(
+    "https://ossam.info/darkog/public/api/v1/create"
+  );
   return "asD$j7";
 }
 
