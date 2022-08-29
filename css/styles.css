@@ -89,6 +89,26 @@
   border-radius: 8px;
 }
 
+/* WIDGET */
+.btn-widget {
+  position: fixed;
+  bottom: 4.8rem;
+  right: 9.6rem;
+  background-color: #4d1ed5;
+  border-radius: 50%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.24));
+  width: 8rem;
+  height: 8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.widget-img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
 /* BENEFITS */
 .benefits {
   display: grid;
