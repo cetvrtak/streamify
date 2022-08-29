@@ -283,6 +283,10 @@ packagesEl.addEventListener("click", function (e) {
   curPkg = packages.at(curPkgEl.dataset.id);
   updateBill();
   updateOrderSummary();
+
+  const orderFormSection = document.querySelector(".order-form");
+  const coords = orderFormSection.getBoundingClientRect();
+  orderFormSection.scrollIntoView({ behavior: "smooth" });
 });
 
 togglerEl.addEventListener("click", function () {
