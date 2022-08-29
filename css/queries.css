@@ -45,6 +45,13 @@
   .widget-list-area {
     width: 100%;
   }
+  .widget-close {
+    top: 1.2rem;
+    right: 1.6rem;
+  }
+  .widget-list-title {
+    padding: 1.2rem 1.6rem;
+  }
   .widget-list {
     grid-template-columns: 1fr;
   }
