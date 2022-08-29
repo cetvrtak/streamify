@@ -208,6 +208,12 @@ function validate(el, regex) {
 }
 
 /*** Modal ***/
+function openModal() {
+  modalEl.classList.remove("hidden");
+  overlayEl.classList.remove("hidden");
+  bodyEl.style.overflow = "hidden";
+}
+
 function closeModal() {
   modalEl.classList.add("hidden");
   overlayEl.classList.add("hidden");
@@ -274,6 +280,10 @@ function getCouponCode(email) {
 }
 
 // EVENT LISTENERS
+window.addEventListener("load", function () {
+  localStorage.user ? (emailEl.value = localStorage.user) : openModal();
+});
+
 packagesEl.addEventListener("click", function (e) {
   const chooseNowEl = e.target.closest(".choose-now");
   if (!chooseNowEl) return;
