@@ -40,6 +40,8 @@
   }
 
   /* WIDGET */
+  .widget,
+  .widget-list-container,
   .widget-list-area {
     width: 100%;
   }
