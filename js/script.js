@@ -29,6 +29,9 @@ const packages = [
 
 const bodyEl = document.querySelector("body");
 
+const btnWidget = document.querySelector(".btn-widget");
+const widgetListEl = document.querySelector(".widget-list");
+
 const btnGetDiscount = document.querySelector(".coupon-form-submit");
 const couponEmailEl = document.querySelector("#email-coupon");
 
@@ -220,6 +223,50 @@ function closeModal() {
   bodyEl.style.overflow = "auto";
 }
 
+/*** Widget ***/
+let users;
+async function fetchUsers() {
+  try {
+    const response = await fetch(
+      "https://mockend.com/Infomedia-bl/fake-api/users"
+    );
+    if (!response.ok) throw new Error("Failed to fetch users 👽");
+
+    users = await response.json();
+    renderWidgetList();
+  } catch (err) {
+    console.error(err, err.message);
+  }
+}
+
+function renderWidgetList() {
+  widgetListEl.innerHTML = "";
+  users.forEach((user) => {
+    let html = `
+      <div class="widget-user">
+        <div class="widget-user-image">
+          <img
+            src="${user.avatarUrl}"
+            alt="${user.name}'s Avatar"
+            class="widget-user-avatar"
+          />
+          <div class="widget-user-status-icon"></div>
+        </div>
+        <div class="widget-user-info">
+          <div class="widget-user-details">
+            <span class="widget-user-name">${user.name}</span>
+            <span class="widget-user-email"
+              >${user.email}</span
+            >
+          </div>
+          <div class="widget-user-status">${user.activity}</div>
+        </div>
+      </div>
+    `;
+    widgetListEl.insertAdjacentHTML("beforeend", html);
+  });
+}
+
 /*** Comments ***/
 let comments;
 async function fetchComments() {
@@ -370,4 +417,10 @@ btnGetDiscount.addEventListener("click", function (e) {
   if (couponCode) couponEl.value = couponCode;
 
   displayCouponSuccessMsg();
+});
+
+/*** Widget ***/
+btnWidget.addEventListener("click", function () {
+  fetchUsers();
+  // widgetListEl.classList.toggle("hidden");
 });
