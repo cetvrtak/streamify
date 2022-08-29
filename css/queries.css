@@ -40,6 +40,9 @@
   }
 
   /* WIDGET */
+  .widget {
+    top: 0;
+  }
   .widget,
   .widget-list-container,
   .widget-list-area {
@@ -54,6 +57,38 @@
   }
   .widget-list {
     grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+  .widget-user {
+    gap: 0.8rem;
+    padding: 0;
+  }
+  .widget-user-avatar {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+  .widget-user-status-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    left: 5.2rem;
+    top: 5.2rem;
+    border-radius: 50%;
+  }
+  .widget-user-info,
+  .widget-user-details {
+    gap: 0.8rem;
+  }
+  .widget-user-name {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+  .widget-user-email {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+  .widget-user-status {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
   }
   .btn-widget {
     bottom: 2.4rem;
