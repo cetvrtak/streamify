@@ -42,8 +42,8 @@ let yearlyBilling = false;
 let curPkg = packages.at(1);
 
 let price = yearlyBilling ? 12 * 0.8 * curPkg.price : curPkg.price;
-let discount = 0;
-let total = (1 - discount) * price;
+let discountRate = 0;
+let total = (1 - discountRate) * price;
 
 const firstnameEl = document.querySelector("#firstname");
 const lastnameEl = document.querySelector("#lastname");
@@ -142,7 +142,7 @@ function updateOrderSummary() {
         </div>
         <div class="order-details-discount listing">
           <span>Discount:</span>
-          <div>$${(discount * price).toFixed(2)}</div>
+          <div>$${(discountRate * price).toFixed(2)}</div>
         </div>
       </div>
       <hr class="separator" />
@@ -163,7 +163,7 @@ function toggleBillingPeriod() {
 
 function updateBill() {
   price = yearlyBilling ? 12 * 0.8 * curPkg.price : curPkg.price;
-  total = (1 - discount) * price;
+  total = (1 - discountRate) * price;
 }
 
 /*** Validation ***/
