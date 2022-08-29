@@ -40,6 +40,12 @@
   }
 
   /* WIDGET */
+  .widget-list-area {
+    width: 100%;
+  }
+  .widget-list {
+    grid-template-columns: 1fr;
+  }
   .btn-widget {
     bottom: 2.4rem;
     right: 1.6rem;
