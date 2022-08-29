@@ -241,7 +241,9 @@ async function fetchUsers() {
 
 function renderWidgetList() {
   widgetListEl.innerHTML = "";
-  users.forEach((user) => {
+  const activeUsers = users.filter((user) => user.activity != "offline");
+
+  activeUsers.forEach((user) => {
     let html = `
       <div class="widget-user">
         <div class="widget-user-image">
