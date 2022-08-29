@@ -30,6 +30,8 @@ const packages = [
 const bodyEl = document.querySelector("body");
 
 const btnWidget = document.querySelector(".btn-widget");
+const btnWidgetClose = document.querySelector(".widget-close");
+const widgetListContainerEl = document.querySelector(".widget-list-container");
 const widgetListEl = document.querySelector(".widget-list");
 
 const btnGetDiscount = document.querySelector(".coupon-form-submit");
@@ -424,5 +426,9 @@ btnGetDiscount.addEventListener("click", function (e) {
 /*** Widget ***/
 btnWidget.addEventListener("click", function () {
   fetchUsers();
-  // widgetListEl.classList.toggle("hidden");
+  widgetListContainerEl.classList.toggle("invisible");
+});
+
+btnWidgetClose.addEventListener("click", function () {
+  widgetListContainerEl.classList.add("invisible");
 });
