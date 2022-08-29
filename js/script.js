@@ -279,6 +279,16 @@ function getCouponCode(email) {
   return "asD$j7";
 }
 
+function displayCouponSuccessMsg() {
+  const title = document.querySelector(".modal-title");
+  const desc = document.querySelector(".modal-desc");
+
+  title.textContent = "Congratulations!";
+  desc.textContent = "Your coupon has been delivered to your email adress.";
+  couponEmailEl.closest(".input-container").classList.add("invisible");
+  btnGetDiscount.value = "Done";
+}
+
 // EVENT LISTENERS
 window.addEventListener("load", function () {
   localStorage.user ? (emailEl.value = localStorage.user) : openModal();
@@ -341,12 +351,20 @@ commentsLoadMoreEl.addEventListener("click", renderFiveComments);
 /*** Coupon ***/
 btnGetDiscount.addEventListener("click", function (e) {
   e.preventDefault();
+
+  // Button value is alrady set to Done, so we're done here!
+  if (localStorage.user) {
+    closeModal();
+    return;
+  }
+
   const isEmailValid = validate(couponEmailEl, emailValidationRegex);
   if (!isEmailValid) return;
 
   emailEl.value = localStorage.user = couponEmailEl.value;
-  closeModal();
 
   const couponCode = getCouponCode(localStorage.user);
   if (couponCode) couponEl.value = couponCode;
+
+  displayCouponSuccessMsg();
 });
