@@ -243,7 +243,9 @@ async function fetchUsers() {
 
 function renderWidgetList() {
   widgetListEl.innerHTML = "";
-  const activeUsers = users.filter((user) => user.activity != "offline");
+  const activeUsers = users
+    .filter((user) => user.activity != "offline")
+    .sort((a, b) => (a.activity < b.activity ? -1 : 1));
 
   activeUsers.forEach((user) => {
     let html = `
