@@ -252,9 +252,9 @@ function renderWidgetList() {
           <img
             src="${user.avatarUrl}"
             alt="${user.name}'s Avatar"
-            class="widget-user-avatar"
+            class="widget-user-avatar ${user.activity}-avatar"
           />
-          <div class="widget-user-status-icon"></div>
+          <div class="widget-user-status-icon ${user.activity}-icon"></div>
         </div>
         <div class="widget-user-info">
           <div class="widget-user-details">
@@ -263,7 +263,11 @@ function renderWidgetList() {
               >${user.email}</span
             >
           </div>
-          <div class="widget-user-status">${user.activity}</div>
+          <div class="widget-user-status ${
+            user.activity
+          }-status">${user.activity[0].toUpperCase()}${user.activity.slice(
+      1
+    )}</div>
         </div>
       </div>
     `;

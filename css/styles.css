@@ -165,7 +165,6 @@
   height: 2.4rem;
   left: 8.5rem;
   top: 9.3rem;
-  background: #3abf5d;
   border-radius: 50%;
 }
 .widget-user-info {
@@ -194,7 +193,6 @@
   font-weight: 700;
   font-size: 1.6rem;
   line-height: 1.9rem;
-  color: #3abf5d;
 }
 .btn-widget {
   align-self: flex-end;

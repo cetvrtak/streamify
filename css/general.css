@@ -83,3 +83,20 @@ input {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
+
+/* WIDGET */
+.streaming-avatar {
+  border: 4px solid #d73939;
+}
+.online-icon {
+  background-color: #3abf5d;
+}
+.streaming-icon {
+  background-color: #d73939;
+}
+.online-status {
+  color: #3abf5d;
+}
+.streaming-status {
+  color: #d73939;
+}
