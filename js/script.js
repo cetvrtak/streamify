@@ -119,6 +119,9 @@ function updateOrderSummary() {
   let html = `
     <div class="package-details">
       <div class="package-info">
+        <div class="order-title" id="order-title-mobile">
+          Order summary
+        </div>
         <div class="package-name">${curPkg.title} Package</div>
         <div class="package-pricing">
           <span>$${

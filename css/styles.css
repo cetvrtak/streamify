@@ -546,7 +546,7 @@
   background: #351593;
 }
 .form-title,
-.order-title {
+#order-title {
   font-weight: 700;
   font-size: 4.8rem;
   line-height: 5.6rem;
@@ -574,6 +574,9 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.8rem;
+}
+#order-title-mobile {
+  display: none;
 }
 .package-name {
   font-weight: 700;
@@ -634,6 +637,7 @@
 .order-details-total {
   font-weight: 700;
   font-size: 2.4rem;
+  line-height: 2.4rem;
 }
 .credit-cards {
   display: flex;

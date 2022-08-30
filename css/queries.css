@@ -167,14 +167,46 @@
   .pricing-package:nth-child(2) {
     order: -1;
   }
+
+  /* ORDER FORM */
   .order-form {
     grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 1.6rem;
   }
   .form-container {
     order: 1;
   }
   .order-summary {
     order: 0;
+    gap: 1.6rem;
+  }
+  #order-title {
+    display: none;
+  }
+  #order-title-mobile {
+    display: block;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+  .order-details {
+    gap: 1.6rem;
+  }
+  .package-details {
+    gap: 1.6rem;
+  }
+  .package-info {
+    gap: 0.8rem;
+  }
+  .package-features {
+    gap: 0.8rem;
+  }
+  .order-details-tab {
+    gap: 1.6rem;
+  }
+  .order-details-cost {
+    gap: 1.6rem;
   }
   #credit-cards {
     display: none;
