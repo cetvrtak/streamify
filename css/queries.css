@@ -38,9 +38,9 @@
     top: 0;
     left: 0;
     transform: translate(0, 0);
+    height: 100vh;
   }
   .widget,
-  .widget-list-container,
   .widget-list-area {
     width: 100%;
   }
@@ -50,6 +50,10 @@
   }
   .widget-list-title {
     padding: 1.2rem 1.6rem;
+    align-self: flex-start;
+  }
+  .widget-list-area {
+    height: 100%;
   }
   .widget-list {
     grid-template-columns: 1fr;
