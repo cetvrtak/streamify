@@ -1,9 +1,3 @@
-@media (max-width: 749px) {
-  .form {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 425px) {
   html {
     font-size: 40%;

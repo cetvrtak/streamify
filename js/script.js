@@ -433,7 +433,7 @@ btnGetDiscount.addEventListener("click", function (e) {
 btnWidget.addEventListener("click", function () {
   fetchUsers();
   widgetListContainerEl.classList.remove("hidden");
-  bodyEl.classList.toggle("no-scroll");
+  bodyEl.classList.add("no-scroll");
 });
 
 btnWidgetClose.addEventListener("click", function () {
