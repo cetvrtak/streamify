@@ -176,6 +176,13 @@
   }
   .form-container {
     order: 1;
+    gap: 1.6rem;
+  }
+  .user-info-form {
+    grid-template-columns: 1fr;
+  }
+  .input-small {
+    width: 100%;
   }
   .order-summary {
     order: 0;
