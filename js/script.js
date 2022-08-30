@@ -432,11 +432,11 @@ btnGetDiscount.addEventListener("click", function (e) {
 /*** Widget ***/
 btnWidget.addEventListener("click", function () {
   fetchUsers();
-  widgetListContainerEl.classList.toggle("invisible");
+  widgetListContainerEl.classList.remove("hidden");
   bodyEl.classList.toggle("no-scroll");
 });
 
 btnWidgetClose.addEventListener("click", function () {
-  widgetListContainerEl.classList.add("invisible");
+  widgetListContainerEl.classList.add("hidden");
   bodyEl.classList.remove("no-scroll");
 });
