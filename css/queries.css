@@ -176,4 +176,21 @@
   .order-summary {
     order: 0;
   }
+  #credit-cards {
+    display: none;
+  }
+  #credit-cards-mobile {
+    display: flex;
+    order: 2;
+    align-items: center;
+  }
+  .credit-cards-title {
+    align-self: center;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .credit-card-image {
+    width: 2.4rem;
+    height: 1.867rem;
+  }
 }

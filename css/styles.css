@@ -651,6 +651,9 @@
   align-items: center;
   gap: 2.4rem;
 }
+#credit-cards-mobile {
+  display: none;
+}
 
 /* FOOTER */
 footer {
