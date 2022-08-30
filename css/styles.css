@@ -1,4 +1,20 @@
 /* HEADER */
+.logo {
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo span {
+  font-weight: 700;
+  font-size: 9.6rem;
+  line-height: 11.2rem;
+  color: #eceffa;
+  transform: rotate(90deg);
+}
 .header-image {
   width: 100%;
 }
