@@ -332,11 +332,26 @@ function renderFiveComments() {
 }
 
 /*** Coupon ***/
-async function getCouponCode(email) {
-  const response = await fetch(
-    "https://ossam.info/darkog/public/api/v1/create"
-  );
-  return "asD$j7";
+async function getCoupon(email) {
+  try {
+    const body = { email, couponType: 1, couponSubtype: 1, value: 50 };
+    const response = await fetch(
+      "https://ossam.info/darkog/public/api/v1/create",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }
+    );
+    if (!response.ok) throw new Error("Failed to get coupon code 💲");
+
+    const data = await response.json();
+    return data.data;
+  } catch (err) {
+    console.error(err, err.message);
+  }
 }
 
 function displayCouponSuccessMsg() {
@@ -409,7 +424,7 @@ modalCloseEl.addEventListener("click", closeModal);
 commentsLoadMoreEl.addEventListener("click", renderFiveComments);
 
 /*** Coupon ***/
-btnGetDiscount.addEventListener("click", function (e) {
+btnGetDiscount.addEventListener("click", async function (e) {
   e.preventDefault();
 
   // Button value is alrady set to Done, so we're done here!
@@ -423,8 +438,8 @@ btnGetDiscount.addEventListener("click", function (e) {
 
   emailEl.value = localStorage.user = couponEmailEl.value;
 
-  const couponCode = getCouponCode(localStorage.user);
-  if (couponCode) couponEl.value = couponCode;
+  const coupon = await getCoupon(localStorage.user);
+  if (coupon.status) couponEl.value = coupon.code;
 
   displayCouponSuccessMsg();
 });
