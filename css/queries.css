@@ -102,6 +102,9 @@
     grid-template-columns: 1fr;
     gap: 4.8rem;
   }
+  .benefit-title {
+    font-size: 24px;
+  }
 
   /* COMMNENTS */
   .comments {

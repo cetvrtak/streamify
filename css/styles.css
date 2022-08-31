@@ -239,10 +239,13 @@
 }
 .benefit-title {
   font-size: 3rem;
+  line-height: 3.2rem;
   text-transform: uppercase;
 }
 .benefit-desc {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  text-align: center;
 }
 
 /* COMMENTS */
