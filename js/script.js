@@ -59,6 +59,7 @@ const cvcEl = document.querySelector("#cvc");
 const visibilityEl = document.querySelector(".visibility");
 const expirationEl = document.querySelector("#expiration");
 const couponEl = document.querySelector("#coupon");
+const btnApply = document.querySelector(".btn-coupon-apply");
 const btnSubmit = document.querySelector(".btn-submit");
 
 /*** Validation regexes ***/
@@ -186,7 +187,6 @@ function validateForm() {
   const cardValid = validate(cardEl, /^((\d{4})[''\s-]?){4}$/);
   const cvcValid = validate(cvcEl, /^\d{3,4}$/);
   const expirationValid = validate(expirationEl, /^\d{2}[/]\d{2}$/);
-  const couponValid = validate(couponEl, /^\w+$/);
 
   return (
     firstnameValid &&
@@ -195,8 +195,7 @@ function validateForm() {
     emailValid &&
     cardValid &&
     cvcValid &&
-    expirationValid &&
-    couponValid
+    expirationValid
   );
 }
 
@@ -367,6 +366,48 @@ function displayCouponSuccessMsg() {
   btnGetDiscount.value = "Done";
 }
 
+async function validateCoupon() {
+  try {
+    // 1. Get email and code
+    const email = emailEl.value;
+    const code = couponEl.value;
+
+    // 2. Check if current email matches localStorage user mail (for potential subsequent changes)
+    if (!validate(emailEl, emailValidationRegex)) return;
+
+    // 3. Validate code (on Backend)
+    const response = await fetch(
+      "https://ossam.info/darkog/public/api/v1/use",
+      {
+        email,
+        code,
+      }
+    );
+    if (!response.ok) throw new Error("Unable to validate coupon code 🙉");
+
+    const data = await response.json();
+    // const data = { status: true, message: "Success" };
+
+    if (data.status) {
+      //    I. Apply discount
+      discountRate = 0.5;
+      updateBill();
+      updateOrderSummary();
+      //    II. Give user feedback (optional)
+    } else {
+      //    I. Update warning message
+      const couponContainerEl = couponEl.closest(".input-container");
+      const validationEl = couponContainerEl.querySelector(".validation-text");
+      validationEl.textContent = data.message;
+      //    II. Activate warning field
+      // using ^\b$ regex that always fails
+      validate(couponEl, /^\b$/);
+    }
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
 // EVENT LISTENERS
 window.addEventListener("load", function () {
   localStorage.user ? (emailEl.value = localStorage.user) : openModal();
@@ -410,6 +451,8 @@ btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   if (!validateForm()) return;
 
+  // Generate another coupon for this user (email address) don’t forget about that part also.
+
   console.log(firstnameEl.value);
   console.log(lastnameEl.value);
   console.log(addressEl.value);
@@ -446,6 +489,8 @@ btnGetDiscount.addEventListener("click", async function (e) {
 
   displayCouponSuccessMsg();
 });
+
+btnApply.addEventListener("click", validateCoupon);
 
 /*** Widget ***/
 btnWidget.addEventListener("click", function () {
