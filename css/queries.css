@@ -234,11 +234,18 @@
     order: 1;
     gap: 1.6rem;
   }
+  .form-title {
+    font-size: 24px;
+    line-height: 40px;
+  }
   .user-info-form {
     grid-template-columns: 1fr;
   }
   .input-small {
     width: 100%;
+  }
+  .btn-submit {
+    font-size: 20px;
   }
   .order-summary {
     order: 0;
@@ -299,6 +306,6 @@
   }
   .credit-card-image {
     width: 2.4rem;
-    height: 1.867rem;
+    height: 24px;
   }
 }
