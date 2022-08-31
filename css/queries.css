@@ -1,4 +1,14 @@
 @media (max-width: 1215px) {
+  /* MODAL */
+  .modal {
+    width: 60%;
+  }
+
+  /* WIDGET */
+  .widget-list-area {
+    width: 77.8rem;
+  }
+
   /* BENEFITS */
   .benefit-icon {
     font-size: 4rem;
