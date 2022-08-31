@@ -46,6 +46,7 @@
     left: 0;
     transform: translate(0, 0);
     height: 100vh;
+    padding: 0 1.6rem;
   }
   .widget,
   .widget-list-area {
@@ -58,6 +59,10 @@
   .widget-list-title {
     padding: 1.2rem 1.6rem;
     align-self: flex-start;
+  }
+  .widget-list-title span {
+    font-size: 24px;
+    line-height: 32px;
   }
   .widget-list-area {
     height: 100%;
