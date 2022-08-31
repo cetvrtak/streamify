@@ -5,6 +5,9 @@
   .container {
     gap: 1.6rem;
   }
+  .logo {
+    display: none;
+  }
   section {
     padding: 0 1.6rem;
   }
