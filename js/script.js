@@ -376,11 +376,15 @@ async function validateCoupon() {
     if (!validate(emailEl, emailValidationRegex)) return;
 
     // 3. Validate code (on Backend)
+    const body = { email, code };
     const response = await fetch(
       "https://ossam.info/darkog/public/api/v1/use",
       {
-        email,
-        code,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
       }
     );
     if (!response.ok) throw new Error("Unable to validate coupon code 🙉");
