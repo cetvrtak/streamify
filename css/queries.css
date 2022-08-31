@@ -1,7 +1,4 @@
 @media (max-width: 425px) {
-  html {
-    font-size: 40%;
-  }
   .container {
     gap: 1.6rem;
   }
@@ -110,6 +107,10 @@
   .comments {
     grid-template-columns: repeat(fit-content, 1fr);
   }
+  .comments-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
   .comment-box {
     padding: 2.4rem 1.6rem;
     grid-template-columns: auto 1fr auto;
@@ -119,20 +120,28 @@
   .comment-author-avatar {
     grid-row: 1 / span 1;
     margin: 0;
-    width: 7rem;
-    height: 7rem;
+    width: 48px;
+    height: 48px;
   }
   .comment-author-details {
     justify-content: center;
     gap: 0.4rem;
+  }
+  .comment-author-name {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .comment-author-email {
+    font-size: 12px;
+    line-height: 16px;
   }
   .comment-date-container {
     margin: 0;
     align-items: center;
   }
   .comment-calendar-icon {
-    width: 3.75rem;
-    height: 3.75rem;
+    width: 24px;
+    height: 24px;
   }
   .comment-date {
     font-size: 1.2rem;
@@ -145,6 +154,7 @@
   }
   .comments-load {
     align-self: stretch;
+    padding: 8px 16px;
   }
 
   /* PRICING */
