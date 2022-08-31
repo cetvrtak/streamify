@@ -158,11 +158,26 @@
   }
 
   /* PRICING */
+  .pricing {
+    font-size: 1.4rem;
+  }
+  .pricing-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .pricing-desc {
+    font-size: 16px;
+    line-height: 32px;
+  }
   .pricing-billing {
     width: auto;
     margin: 0 auto 1.6rem;
     padding: 0.4rem;
     gap: 2.4rem;
+  }
+  .pricing-billing-period {
+    font-size: 12px;
+    line-height: 16px;
   }
   .pricing-packages {
     flex-wrap: nowrap;
@@ -179,6 +194,34 @@
   }
   .pricing-package:nth-child(2) {
     order: -1;
+  }
+  .pricing-package-title {
+    font-size: 24px;
+    line-height: 40px;
+  }
+  .pricing-package-desc {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 1.6rem;
+  }
+  .pricing-package-features {
+    margin-bottom: 2rem;
+  }
+  .pricing-package-pricing {
+    margin-bottom: 1.6rem;
+  }
+  .pricing-package-pricing span {
+    font-size: 32px;
+    line-height: 56px;
+  }
+  .choose-now {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 0.8rem;
+  }
+  .pricing-package-terms {
+    font-size: 12px;
+    line-height: 16px;
   }
 
   /* ORDER FORM */
