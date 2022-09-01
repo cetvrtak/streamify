@@ -60,11 +60,12 @@
     width: 40%;
   }
   .modal-title {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 4vw;
+    line-height: 6vw;
   }
   .modal-desc {
-    font-size: 1.4rem;
+    font-size: 3.5vw;
+    line-height: 6vw;
   }
   .btn-get-code {
     align-self: stretch;
@@ -95,8 +96,8 @@
     align-self: flex-start;
   }
   .widget-list-title span {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 6vw;
+    line-height: 8vw;
   }
   .widget-list-area {
     height: 100%;
@@ -110,14 +111,14 @@
     padding: 0;
   }
   .widget-user-avatar {
-    width: 6.4rem;
-    height: 6.4rem;
+    width: 16vw;
+    height: 16vw;
   }
   .widget-user-status-icon {
-    width: 1.2rem;
-    height: 1.2rem;
-    left: 5.2rem;
-    top: 5.2rem;
+    width: 3vw;
+    height: 3vw;
+    left: 13vw;
+    top: 13vw;
     border-radius: 50%;
   }
   .widget-user-info,
@@ -125,16 +126,16 @@
     gap: 0.8rem;
   }
   .widget-user-name {
-    font-size: 1.6rem;
-    line-height: 1.9rem;
+    font-size: 4vw;
+    line-height: 4.75vw;
   }
   .widget-user-email {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
+    font-size: 3vw;
+    line-height: 3.5vw;
   }
   .widget-user-status {
-    font-size: 1.4rem;
-    line-height: 1.6rem;
+    font-size: 3vw;
+    line-height: 3.5vw;
   }
   .btn-widget {
     bottom: 2.4rem;
@@ -149,7 +150,11 @@
     gap: 4.8rem;
   }
   .benefit-title {
-    font-size: 2.4rem;
+    font-size: 4.4vw;
+  }
+  .benefit-desc {
+    font-size: 3vw;
+    line-height: 4vw;
   }
 
   /* COMMNENTS */
@@ -157,8 +162,8 @@
     grid-template-columns: repeat(fit-content, 1fr);
   }
   .comments-title {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 6vw;
+    line-height: 7vw;
   }
   .comment-box {
     padding: 2.4rem 1.6rem;
@@ -169,12 +174,260 @@
   .comment-author-avatar {
     grid-row: 1 / span 1;
     margin: 0;
-    width: 4.8rem;
-    height: 4.8rem;
+    width: 12vw;
+    height: 12vw;
   }
   .comment-author-details {
     justify-content: center;
     gap: 0.4rem;
+  }
+  .comment-author-name {
+    font-size: 4vw;
+    line-height: 6vw;
+  }
+  .comment-author-email {
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+  .comment-date-container {
+    margin: 0;
+    align-items: center;
+  }
+  .comment-calendar-icon {
+    width: 6vw;
+    height: 6vw;
+  }
+  .comment-date-box {
+    gap: 2vw;
+  }
+  .comment-date {
+    font-size: 3vw;
+    line-height: 3vw;
+  }
+  .comment-author-text {
+    grid-column: 1 / -1;
+    font-size: 3.5vw;
+    line-height: 5vw;
+    margin: 0;
+  }
+  .comments-load {
+    align-self: stretch;
+    padding: 0.8rem 1.6rem;
+  }
+
+  /* PRICING */
+  .pricing {
+    font-size: 3vw;
+  }
+  .pricing-title {
+    font-size: 6vw;
+    line-height: 7vw;
+  }
+  .pricing-desc {
+    font-size: 4vw;
+    line-height: 5.2vw;
+  }
+  .pricing-billing {
+    width: 42rem;
+    margin: 0 auto 1.6rem;
+    padding: 0.4rem;
+    gap: 2.4rem;
+  }
+  .pricing-billing-period {
+    font-size: 2.4vw;
+    line-height: 2.4vw;
+  }
+  .pricing-packages {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0;
+    padding: 0 3.6rem;
+  }
+  .pricing-package {
+    flex: 0 0 auto;
+    max-width: none;
+    width: 100%;
+    transform: translateX(100%);
+    margin-right: 2.4rem;
+  }
+  .pricing-package:nth-child(2) {
+    order: -1;
+  }
+  .pricing-package-title {
+    font-size: 5.5vw;
+    line-height: 9vw;
+  }
+  .pricing-package-desc {
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+    margin-bottom: 1.6rem;
+  }
+  .pricing-package-features {
+    margin-bottom: 2rem;
+    line-height: 4vw;
+  }
+  .material-symbols-outlined {
+    font-size: 6vw;
+  }
+  .pricing-package-pricing {
+    margin-bottom: 1.6rem;
+    font-size: 3vw;
+  }
+  .pricing-package-pricing span {
+    font-size: 7.2vw;
+    line-height: 13.6vw;
+  }
+  .choose-now {
+    font-size: 5vw;
+    line-height: 6vw;
+    margin-bottom: 0.8rem;
+  }
+  .pricing-package-terms {
+    font-size: 3vw;
+    line-height: 3.75vw;
+  }
+
+  /* ORDER FORM */
+  .order-form {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 1.6rem;
+  }
+  .form-container {
+    order: 1;
+    gap: 1.6rem;
+  }
+  .form-title {
+    font-size: 6vw;
+    line-height: 10vw;
+  }
+  label {
+    font-size: 3.5vw;
+    line-height: 4vw;
+  }
+  .input-small {
+    width: 100%;
+  }
+  .btn-submit {
+    font-size: 2rem;
+  }
+  .order-summary {
+    order: 0;
+    gap: 1.6rem;
+  }
+  #order-title {
+    display: none;
+  }
+  #order-title-mobile {
+    display: block;
+    font-weight: 700;
+    font-size: 6vw;
+    line-height: 8vw;
+  }
+  .order-details {
+    gap: 1.6rem;
+  }
+  .package-details {
+    gap: 1.6rem;
+  }
+  .package-info {
+    gap: 0.8rem;
+  }
+  .package-name {
+    font-size: 4vw;
+    line-height: 6vw;
+  }
+  .package-pricing {
+    font-size: 3.5vw;
+    line-height: 4vw;
+  }
+  .package-pricing span {
+    font-size: 8vw;
+    line-height: 10vw;
+  }
+  .package-features {
+    gap: 0.8rem;
+    font-size: 3.5vw;
+    line-height: 4.8vw;
+  }
+  .listing {
+    font-size: 4vw;
+    line-height: 6vw;
+  }
+  .order-details-tab {
+    gap: 1.6rem;
+  }
+  .order-details-cost {
+    gap: 1.6rem;
+  }
+  #credit-cards {
+    display: none;
+  }
+  #credit-cards-mobile {
+    display: flex;
+    order: 2;
+    align-items: center;
+  }
+  .credit-cards-title {
+    align-self: center;
+    font-size: 4vw;
+    line-height: 6vw;
+  }
+  .credit-card-image {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+
+@media (max-width: 425px) {
+  .modal-title {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .modal-desc {
+    font-size: 1.4rem;
+  }
+  .widget-list-title span {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+  .widget-user-avatar {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+  .widget-user-status-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    left: 5.2rem;
+    top: 5.2rem;
+  }
+  .widget-user-name {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+  .widget-user-email {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+  .widget-user-status {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .benefit-title {
+    font-size: 2.4rem;
+  }
+  .benefit-desc {
+    font-size: 1.2rem;
+  }
+
+  .comments-title {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+  .comment-author-avatar {
+    width: 4.8rem;
+    height: 4.8rem;
   }
   .comment-author-name {
     font-size: 1.6rem;
@@ -184,29 +437,22 @@
     font-size: 1.2rem;
     line-height: 1.6rem;
   }
-  .comment-date-container {
-    margin: 0;
-    align-items: center;
+  .comment-date-box {
+    gap: 0.8rem;
   }
   .comment-calendar-icon {
     width: 2.4rem;
     height: 2.4rem;
   }
   .comment-date {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
   }
   .comment-author-text {
-    grid-column: 1 / -1;
     font-size: 1.4rem;
     line-height: 2rem;
-    margin: 0;
-  }
-  .comments-load {
-    align-self: stretch;
-    padding: 0.8rem 1.6rem;
   }
 
-  /* PRICING */
   .pricing {
     font-size: 1.4rem;
   }
@@ -228,22 +474,6 @@
     font-size: 1.2rem;
     line-height: 1.6rem;
   }
-  .pricing-packages {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 0;
-    padding: 0 3.6rem;
-  }
-  .pricing-package {
-    flex: 0 0 auto;
-    max-width: none;
-    width: 100%;
-    transform: translateX(100%);
-    margin-right: 2.4rem;
-  }
-  .pricing-package:nth-child(2) {
-    order: -1;
-  }
   .pricing-package-title {
     font-size: 2.4rem;
     line-height: 4rem;
@@ -251,72 +481,30 @@
   .pricing-package-desc {
     font-size: 1.4rem;
     line-height: 2.4rem;
-    margin-bottom: 1.6rem;
-  }
-  .pricing-package-features {
-    margin-bottom: 2rem;
   }
   .pricing-package-pricing {
-    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
   }
   .pricing-package-pricing span {
-    font-size: 3.2rem;
-    line-height: 5.6rem;
+    font-size: 8vw;
+    line-height: 14vw;
+  }
+  .pricing-package-features {
+    line-height: 1.9rem;
   }
   .choose-now {
     font-size: 2rem;
     line-height: 2.4rem;
-    margin-bottom: 0.8rem;
   }
   .pricing-package-terms {
     font-size: 1.2rem;
     line-height: 1.6rem;
   }
 
-  /* ORDER FORM */
-  .order-form {
-    grid-template-columns: 1fr;
-    gap: 1.6rem;
-    padding: 1.6rem;
-  }
-  .form-container {
-    order: 1;
-    gap: 1.6rem;
-  }
-  .form-title {
-    font-size: 2.4rem;
-    line-height: 4rem;
-  }
-  .user-info-form {
-    grid-template-columns: 1fr;
-  }
-  .input-small {
-    width: 100%;
-  }
-  .btn-submit {
-    font-size: 2rem;
-  }
-  .order-summary {
-    order: 0;
-    gap: 1.6rem;
-  }
-  #order-title {
-    display: none;
-  }
   #order-title-mobile {
-    display: block;
-    font-weight: 700;
     font-size: 2.4rem;
     line-height: 3.2rem;
-  }
-  .order-details {
-    gap: 1.6rem;
-  }
-  .package-details {
-    gap: 1.6rem;
-  }
-  .package-info {
-    gap: 0.8rem;
   }
   .package-name {
     font-size: 1.6rem;
@@ -331,25 +519,27 @@
     line-height: 4rem;
   }
   .package-features {
-    gap: 0.8rem;
     font-size: 1.4rem;
   }
-  .order-details-tab {
-    gap: 1.6rem;
+  .material-symbols-outlined {
+    font-size: 2.4rem;
   }
-  .order-details-cost {
-    gap: 1.6rem;
+  .listing {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
   }
-  #credit-cards {
-    display: none;
+  .user-info-form {
+    grid-template-columns: 1fr;
   }
-  #credit-cards-mobile {
-    display: flex;
-    order: 2;
-    align-items: center;
+  .form-title {
+    font-size: 2.4rem;
+    line-height: 4rem;
+  }
+  label {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
   }
   .credit-cards-title {
-    align-self: center;
     font-size: 1.6rem;
     line-height: 2.4rem;
   }
