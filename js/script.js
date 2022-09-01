@@ -410,6 +410,8 @@ async function validateCoupon() {
       updateBill();
       updateOrderSummary();
       //    II. Give user feedback (optional)
+      //    III. Clear warning
+      validate(couponEl, /\w+/);
     } else {
       //    I. Update warning message
       const couponContainerEl = couponEl.closest(".input-container");
