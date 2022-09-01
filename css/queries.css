@@ -51,6 +51,7 @@
     top: 0;
     right: 0;
     text-align: right;
+    align-self: flex-end;
   }
   .modal-items-container {
     gap: 1.6rem;
@@ -64,6 +65,10 @@
   }
   .modal-desc {
     font-size: 1.4rem;
+  }
+  .btn-get-code {
+    align-self: stretch;
+    text-align: center;
   }
   .coupon-form {
     width: 100%;
