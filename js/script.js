@@ -66,6 +66,8 @@ const emailValidationRegex =
 
 const modalEls = document.querySelectorAll(".modal");
 const discountModalEl = document.querySelector("#discount-modal");
+const welcomeModalEl = document.querySelector("#welcome-modal");
+const btnGetCode = document.querySelector(".btn-get-code");
 const overlayEl = document.querySelector(".overlay");
 const modalCloseEls = document.querySelectorAll(".modal-close");
 
@@ -335,9 +337,14 @@ function renderFiveComments() {
 }
 
 /*** Coupon ***/
-async function getCoupon(email) {
+async function getCoupon() {
   try {
-    const body = { email, couponType: 1, couponSubtype: 1, value: 50 };
+    const body = {
+      email: localStorage.user,
+      couponType: 1,
+      couponSubtype: 1,
+      value: 50,
+    };
     const response = await fetch(
       "https://ossam.info/darkog/public/api/v1/create",
       {
@@ -351,7 +358,10 @@ async function getCoupon(email) {
     if (!response.ok) throw new Error("Failed to get coupon code 💲");
 
     const data = await response.json();
-    return data.data;
+    const coupon = data.data;
+    if (coupon.status) console.log(coupon.code);
+
+    return coupon;
   } catch (err) {
     console.error(err, err.message);
   }
@@ -458,20 +468,27 @@ btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   if (!validateForm()) return;
 
-  // Generate another coupon for this user (email address) don’t forget about that part also.
+  console.log([
+    firstnameEl.value,
+    lastnameEl.value,
+    addressEl.value,
+    emailEl.value,
+    cardEl.value,
+    cvcEl.value,
+    expirationEl.value,
+    couponEl.value,
+  ]);
 
-  console.log(firstnameEl.value);
-  console.log(lastnameEl.value);
-  console.log(addressEl.value);
-  console.log(emailEl.value);
-  console.log(cardEl.value);
-  console.log(cvcEl.value);
-  console.log(expirationEl.value);
-  console.log(couponEl.value);
+  openModal(welcomeModalEl);
 });
 
 overlayEl.addEventListener("click", closeModals);
 modalCloseEls.forEach((modal) => modal.addEventListener("click", closeModals));
+btnGetCode.addEventListener("click", function () {
+  // Generate another coupon for this user (email address) don’t forget about that part also.
+  getCoupon();
+  closeModals();
+});
 
 /*** Comments  ***/
 commentsLoadMoreEl.addEventListener("click", renderFiveComments);
@@ -491,8 +508,7 @@ btnGetDiscount.addEventListener("click", async function (e) {
 
   emailEl.value = localStorage.user = couponEmailEl.value;
 
-  const coupon = await getCoupon(localStorage.user);
-  if (coupon.status) couponEl.value = coupon.code;
+  const coupon = await getCoupon();
 
   displayCouponSuccessMsg();
 });
