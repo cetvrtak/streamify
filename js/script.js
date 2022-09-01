@@ -46,7 +46,8 @@ const togglerEl = document.querySelector(".toggler");
 let yearlyBilling = false;
 let curPkg = packages.at(1);
 
-let price, discountRate, discount, total;
+let price, discount, total;
+let discountRate = 0;
 
 const firstnameEl = document.querySelector("#firstname");
 const lastnameEl = document.querySelector("#lastname");
