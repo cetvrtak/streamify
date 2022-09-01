@@ -64,9 +64,10 @@ const btnSubmit = document.querySelector(".btn-submit");
 const emailValidationRegex =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-const modalEl = document.querySelector(".modal");
+const modalEls = document.querySelectorAll(".modal");
+const discountModalEl = document.querySelector("#discount-modal");
 const overlayEl = document.querySelector(".overlay");
-const modalCloseEl = document.querySelector(".modal-close");
+const modalCloseEls = document.querySelectorAll(".modal-close");
 
 const packageEl = document.querySelector(".order-details-package");
 const pricingEl = document.querySelector(".order-details-pricing");
@@ -215,14 +216,14 @@ function validate(el, regex) {
 }
 
 /*** Modal ***/
-function openModal() {
-  modalEl.classList.remove("hidden");
+function openModal(modal) {
+  modal.classList.remove("hidden");
   overlayEl.classList.remove("hidden");
   bodyEl.style.overflow = "hidden";
 }
 
-function closeModal() {
-  modalEl.classList.add("hidden");
+function closeModals() {
+  modalEls.forEach((modal) => modal.classList.add("hidden"));
   overlayEl.classList.add("hidden");
   bodyEl.style.overflow = "auto";
 }
@@ -414,7 +415,9 @@ async function validateCoupon() {
 
 // EVENT LISTENERS
 window.addEventListener("load", function () {
-  localStorage.user ? (emailEl.value = localStorage.user) : openModal();
+  localStorage.user
+    ? (emailEl.value = localStorage.user)
+    : openModal(discountModalEl);
 });
 
 packagesEl.addEventListener("click", function (e) {
@@ -467,8 +470,8 @@ btnSubmit.addEventListener("click", function (e) {
   console.log(couponEl.value);
 });
 
-overlayEl.addEventListener("click", closeModal);
-modalCloseEl.addEventListener("click", closeModal);
+overlayEl.addEventListener("click", closeModals);
+modalCloseEls.forEach((modal) => modal.addEventListener("click", closeModals));
 
 /*** Comments  ***/
 commentsLoadMoreEl.addEventListener("click", renderFiveComments);
@@ -479,7 +482,7 @@ btnGetDiscount.addEventListener("click", async function (e) {
 
   // Button value is alrady set to Done, so we're done here!
   if (localStorage.user) {
-    closeModal();
+    closeModals();
     return;
   }
 
