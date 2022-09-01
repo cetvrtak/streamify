@@ -46,9 +46,7 @@ const togglerEl = document.querySelector(".toggler");
 let yearlyBilling = false;
 let curPkg = packages.at(1);
 
-let price = yearlyBilling ? 12 * 0.8 * curPkg.price : curPkg.price;
-let discountRate = 0;
-let total = (1 - discountRate) * price;
+let price, discountRate, discount, total;
 
 const firstnameEl = document.querySelector("#firstname");
 const lastnameEl = document.querySelector("#lastname");
@@ -151,7 +149,7 @@ function updateOrderSummary() {
         </div>
         <div class="order-details-discount listing">
           <span>Discount:</span>
-          <div>$${(discountRate * price).toFixed(2)}</div>
+          <div>$${discount.toFixed(2)}</div>
         </div>
       </div>
       <hr class="separator" />
@@ -172,8 +170,10 @@ function toggleBillingPeriod() {
 
 function updateBill() {
   price = yearlyBilling ? 12 * 0.8 * curPkg.price : curPkg.price;
-  total = (1 - discountRate) * price;
+  discount = Math.floor(100 * discountRate * price) / 100;
+  total = price - discount;
 }
+updateBill();
 
 /*** Validation ***/
 function validateForm() {
