@@ -104,6 +104,41 @@
   box-shadow: 0px 4px 4px rgba(13, 13, 13, 0.25);
   border-radius: 8px;
 }
+/*** Welcome Onboard (Order Complete) ***/
+#welcome-modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.welcome-icon {
+  margin-bottom: 6.04rem;
+}
+.welcome-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  margin-bottom: 0.8rem;
+}
+.welcome-subtitle {
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 1.6rem;
+}
+.welcome-desc {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 7.2rem;
+}
+.btn-get-code {
+  padding: 12px 24px;
+  background: #4d1ed5;
+  box-shadow: 0px 4px 4px rgba(13, 13, 13, 0.25);
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 24px;
+}
 
 /* WIDGET */
 .widget {
