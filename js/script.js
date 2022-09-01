@@ -163,8 +163,7 @@ function updateOrderSummary() {
     </div>
   </div>
   `;
-  orderDetailsEl.innerHTML = "";
-  orderDetailsEl.insertAdjacentHTML("afterbegin", html);
+  orderDetailsEl.innerHTML = html;
 }
 
 function toggleBillingPeriod() {
@@ -177,6 +176,7 @@ function updateBill() {
   total = price - discount;
 }
 updateBill();
+updateOrderSummary();
 
 /*** Validation ***/
 function validateForm() {
