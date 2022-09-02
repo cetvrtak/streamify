@@ -29,6 +29,8 @@ const packages = [
 
 const bodyEl = document.querySelector("body");
 
+const btnBecomePro = document.querySelector(".btn-become-pro");
+
 const btnWidget = document.querySelector(".btn-widget");
 const btnWidgetClose = document.querySelector(".widget-close");
 const widgetEl = document.querySelector(".widget");
@@ -2131,12 +2133,20 @@ async function validateCoupon() {
   }
 }
 
+function scrollToOrderFormSection() {
+  const orderFormSection = document.querySelector(".order-form");
+  const coords = orderFormSection.getBoundingClientRect();
+  orderFormSection.scrollIntoView({ behavior: "smooth" });
+}
+
 // EVENT LISTENERS
 window.addEventListener("load", function () {
   localStorage.user
     ? (emailEl.value = localStorage.user)
     : openModal(discountModalEl);
 });
+
+btnBecomePro.addEventListener("click", scrollToOrderFormSection);
 
 packagesEl.addEventListener("click", function (e) {
   const chooseNowEl = e.target.closest(".choose-now");
@@ -2148,9 +2158,7 @@ packagesEl.addEventListener("click", function (e) {
   updateBill();
   updateOrderSummary();
 
-  const orderFormSection = document.querySelector(".order-form");
-  const coords = orderFormSection.getBoundingClientRect();
-  orderFormSection.scrollIntoView({ behavior: "smooth" });
+  scrollToOrderFormSection();
 });
 
 togglerEl.addEventListener("click", function () {
