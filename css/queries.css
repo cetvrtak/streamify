@@ -1,4 +1,28 @@
 @media (max-width: 1215px) {
+  /* HEADER */
+  .logo {
+    display: none;
+  }
+  .hero-container {
+    width: 75%;
+    gap: 6vw;
+  }
+  .hero-desc {
+    gap: 2vw;
+  }
+  .hero-title {
+    font-size: 6vw;
+    line-height: 8.42vw;
+  }
+  .hero-subtitle {
+    font-size: 2.67vw;
+    line-height: 2.67vw;
+  }
+  .btn-become-pro {
+    font-size: 2vw;
+    line-height: 2vw;
+  }
+
   /* MODAL */
   .modal {
     width: 60%;
@@ -30,9 +54,6 @@
 @media (max-width: 800px) {
   .container {
     gap: 1.6rem;
-  }
-  .logo {
-    display: none;
   }
   section {
     padding: 0 1.6rem;
