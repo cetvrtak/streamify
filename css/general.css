@@ -109,14 +109,14 @@ input {
 }
 
 /* SCROLLBARS */
-::-webkit-scrollbar {
+.yscroll::-webkit-scrollbar {
   width: 1.6rem;
 }
-::-webkit-scrollbar-track {
+.yscroll::-webkit-scrollbar-track {
   background: #eceffa;
   border-radius: 50px;
 }
-::-webkit-scrollbar-thumb {
+.yscroll::-webkit-scrollbar-thumb {
   background: #4d1ed5;
   border-radius: 50px;
 }
