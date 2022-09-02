@@ -158,15 +158,15 @@
   }
 
   /* COMMNENTS */
-  .comments {
-    grid-template-columns: repeat(fit-content, 1fr);
-  }
   .comments-title {
     font-size: 6vw;
     line-height: 7vw;
   }
+  .comments-container {
+    gap: 0.8rem;
+  }
   .comment-box {
-    padding: 2.4rem 1.6rem;
+    padding: 2.4rem 0;
     grid-template-columns: auto 1fr auto;
     gap: 0.8rem 1.6rem;
     border: none;
