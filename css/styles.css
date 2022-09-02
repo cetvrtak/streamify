@@ -806,6 +806,10 @@ footer {
   align-items: flex-start;
   gap: 2.4rem;
 }
+.footer-social-box img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
 .footer-links {
   display: flex;
   align-items: center;
@@ -820,4 +824,7 @@ footer {
 .footer-link:hover,
 .footer-link:active {
   color: #eceffa;
+}
+.footer-copyright-mob {
+  display: none;
 }
