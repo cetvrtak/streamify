@@ -548,3 +548,10 @@
     height: 2.4rem;
   }
 }
+
+/* FIX: Comments section falling out below Figma specification */
+@media (max-width: 360px) {
+  .comment-calendar-icon {
+    display: none;
+  }
+}
