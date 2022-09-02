@@ -413,18 +413,32 @@
     justify-content: space-between;
     gap: 2.4rem;
   }
+  .footer-firm {
+    font-size: 4vw;
+    line-height: 6vw;
+  }
   .footer-right {
     align-items: center;
   }
+  .footer-social-link img {
+    width: 6vw;
+    height: 6vw;
+  }
   .footer-links {
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 4vw;
+  }
+  .footer-link {
+    font-size: 3.5vw;
+    line-height: 4vw;
   }
   .footer-copyright {
     display: none;
   }
   .footer-copyright-mob {
     display: block;
+    font-size: 3.5vw;
+    line-height: 6vw;
   }
 }
 
@@ -629,6 +643,9 @@
   .footer-copyright {
     font-size: 1.4rem;
     line-height: 2.4rem;
+  }
+  .footer-links {
+    gap: 1.6rem;
   }
   .footer-link {
     font-size: 1.6rem;
