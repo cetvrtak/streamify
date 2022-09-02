@@ -401,10 +401,10 @@
 
   /* FOOTER */
   footer {
-    margin-top: -1.6rem;
+    height: auto;
   }
   .footer {
-    padding-top: 4.8rem;
+    padding: 1.6rem 3.3rem;
   }
   .footer-container {
     display: flex;
@@ -632,7 +632,7 @@
   }
   .footer-link {
     font-size: 1.6rem;
-    line-height: 3.2rem;
+    line-height: 1.6rem;
   }
 }
 

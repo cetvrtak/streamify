@@ -763,10 +763,11 @@
 
 /* FOOTER */
 footer {
+  max-width: 144rem;
   height: 25.6rem;
+  margin: 0 auto;
   background: #07090a;
   color: #ffffff;
-  margin-top: -4.8rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -790,7 +791,8 @@ footer {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
-.footer-copyright {
+.footer-copyright,
+.footer-copyright-mob {
   font-size: 1.2rem;
   line-height: 1.6rem;
 }
@@ -814,6 +816,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  order: -1;
 }
 .footer-link {
   font-size: 1.4rem;
@@ -827,4 +830,6 @@ footer {
 }
 .footer-copyright-mob {
   display: none;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
 }
