@@ -442,6 +442,12 @@
   }
 }
 
+@media (max-width: 630px) {
+  .pricing-billing {
+    width: 36rem;
+  }
+}
+
 @media (max-width: 425px) {
   .header-image {
     display: none;
