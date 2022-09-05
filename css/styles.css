@@ -283,11 +283,26 @@
   font-size: 1.6rem;
   line-height: 1.9rem;
 }
-.btn-widget {
+.fixed-buttons {
   position: fixed;
   bottom: 4.8rem;
   right: 9.6rem;
 
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+.btn-scroll {
+  background: #a6d51e;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-widget {
   align-self: flex-end;
   background-color: #4d1ed5;
   border-radius: 50%;

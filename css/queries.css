@@ -159,9 +159,13 @@
     font-size: 3vw;
     line-height: 3.5vw;
   }
-  .btn-widget {
+  .fixed-buttons {
     bottom: 2.4rem;
     right: 1.6rem;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .btn-widget {
     width: 5.6rem;
     height: 5.6rem;
   }
