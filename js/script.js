@@ -36,13 +36,15 @@ const btnScrollToTop = document.querySelector(".btn-scroll");
 const btnWidget = document.querySelector(".btn-widget");
 const btnWidgetClose = document.querySelector(".widget-close");
 const widgetEl = document.querySelector(".widget");
-const widgetListEl = document.querySelector(".streamers-list");
+const widgetListEl = document.querySelector("#widget-list");
 
 const btnGetDiscount = document.querySelector(".coupon-form-submit");
 const couponEmailEl = document.querySelector("#email-coupon");
 
 const commentsEl = document.querySelector(".comments-container");
 const commentsLoadMoreEl = document.querySelector(".comments-load");
+
+const streamersListEl = document.querySelector("#streamers-list");
 
 const packagesEl = document.querySelector(".pricing-packages");
 const orderDetailsEl = document.querySelector(".order-details");
@@ -245,8 +247,8 @@ async function fetchUsers() {
     );
     if (!response.ok) throw new Error("Failed to fetch users 👽");
 
-    // users = await response.json();
-    users = [
+    // return await response.json();
+    return [
       {
         activity: "online",
         avatarUrl: "https://i.pravatar.cc/150?u=78358",
@@ -1048,20 +1050,20 @@ async function fetchUsers() {
         statusMessage: "reading book",
       },
     ];
-
-    renderStreamersList();
   } catch (err) {
     console.error(err, err.message);
   }
 }
 
-function renderStreamersList() {
-  widgetListEl.innerHTML = "";
-  const activeUsers = users
-    .filter((user) => user.activity != "offline")
-    .sort((a, b) => (a.activity < b.activity ? -1 : 1));
+async function renderStreamersList(listEl, streamers) {
+  if (!streamers) {
+    // Fetch streamers and store into the "users" array
+    users = streamers = await fetchUsers();
+  }
 
-  activeUsers.forEach((user) => {
+  listEl.innerHTML = "";
+
+  streamers.forEach((user) => {
     let html = `
       <div class="widget-user">
         <div class="widget-user-image">
@@ -1087,9 +1089,11 @@ function renderStreamersList() {
         </div>
       </div>
     `;
-    widgetListEl.insertAdjacentHTML("beforeend", html);
+    listEl.insertAdjacentHTML("beforeend", html);
   });
 }
+// Not passing the "users" argument to force fetchUsers()
+renderStreamersList(streamersListEl);
 
 /*** Comments ***/
 let comments;
@@ -2237,7 +2241,10 @@ btnApply.addEventListener("click", validateCoupon);
 
 /*** Widget ***/
 btnWidget.addEventListener("click", function () {
-  fetchUsers();
+  const activeUsers = users
+    .filter((user) => user.activity != "offline")
+    .sort((a, b) => (a.activity < b.activity ? -1 : 1));
+  renderStreamersList(widgetListEl, activeUsers);
   widgetEl.classList.remove("hidden");
   bodyEl.classList.add("no-scroll");
 });
