@@ -35,7 +35,8 @@
 
   /* BENEFITS */
   .benefit-icon {
-    font-size: 4rem;
+    width: 4.8rem;
+    height: 4.8rem;
   }
   .benefit-title {
     font-size: 1.6rem;
@@ -176,6 +177,10 @@
   .benefit-desc {
     font-size: 3vw;
     line-height: 4vw;
+  }
+  .benefit-icon {
+    width: 16vw;
+    height: 16vw;
   }
 
   /* COMMNENTS */
@@ -512,6 +517,11 @@
     line-height: 1.6rem;
   }
 
+  /* BENEFITS */
+  .benefit-icon {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
   .benefit-title {
     font-size: 2.4rem;
   }
