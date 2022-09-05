@@ -91,7 +91,7 @@ function renderPackages() {
       <div class="pricing-package" data-id="${packages.indexOf(pkg)}">
         <div class="pricing-package-title">${pkg.title}</div>
         <div class="pricing-package-desc">
-          1 month <span class="free">free</span>
+          1 month <span class="emphasize">free</span>
         </div>
         <div class="pricing-package-pricing">
           <span>$${

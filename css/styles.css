@@ -518,7 +518,7 @@
   color: #727272;
   margin-bottom: 2.4rem;
 }
-.pricing-package:nth-child(2) .free {
+.pricing-package:nth-child(2) .emphasize {
   color: #4d1ed5;
 }
 .pricing-package-pricing {
