@@ -57,10 +57,10 @@
     gap: 1.6rem;
   }
   section {
-    padding: 0 1.6rem;
+    padding: 3vw 1.6rem;
   }
   .section-separator {
-    margin: 0 1.6rem;
+    display: none;
   }
 
   /* MODAL */
@@ -455,6 +455,10 @@
 }
 
 @media (max-width: 425px) {
+  section {
+    padding: 0 1.6rem;
+  }
+
   .header-image {
     display: none;
   }
