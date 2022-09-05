@@ -1097,6 +1097,7 @@ renderStreamersList(streamersListEl);
 
 /*** Comments ***/
 let comments;
+let commCounter = 0;
 async function fetchComments() {
   try {
     const response = await fetch(
@@ -2014,7 +2015,6 @@ async function fetchComments() {
 }
 fetchComments();
 
-let commCounter = 0;
 function renderFiveComments() {
   if (commCounter > comments.length) return;
 
