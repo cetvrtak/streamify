@@ -242,10 +242,10 @@ function closeModals() {
 let users;
 async function fetchUsers() {
   try {
-    const response = await fetch(
-      "https://mockend.com/Infomedia-bl/fake-api/users"
-    );
-    if (!response.ok) throw new Error("Failed to fetch users 👽");
+    // const response = await fetch(
+    //   "https://mockend.com/Infomedia-bl/fake-api/users"
+    // );
+    // if (!response.ok) throw new Error("Failed to fetch users 👽");
 
     // return await response.json();
     return [
@@ -1100,10 +1100,10 @@ let comments;
 let commCounter = 0;
 async function fetchComments() {
   try {
-    const response = await fetch(
-      "https://mockend.com/Infomedia-bl/fake-api/comments"
-    );
-    if (!response.ok) throw new Error("Failed to fetch comments 🍕");
+    // const response = await fetch(
+    //   "https://mockend.com/Infomedia-bl/fake-api/comments"
+    // );
+    // if (!response.ok) throw new Error("Failed to fetch comments 🍕");
 
     // comments = await response.json();
     comments = [
