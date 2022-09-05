@@ -212,22 +212,22 @@
   top: 2.4rem;
   right: 2.4rem;
 }
-.widget-list-title {
+.streamers-list-title {
   display: flex;
   align-items: center;
   padding: 6.6rem 2.4rem 1rem;
 }
-.widget-list-title span {
+.streamers-list-title span {
   font-weight: 700;
   font-size: 4.8rem;
   line-height: 5.6rem;
 }
-.widget-list-area {
+.streamers-list-area {
   width: 121.5rem;
   height: 60vh;
   overflow-y: scroll;
 }
-.widget-list {
+.streamers-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;

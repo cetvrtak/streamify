@@ -29,7 +29,7 @@
   }
 
   /* WIDGET */
-  .widget-list-area {
+  .streamers-list-area {
     width: 77.8rem;
   }
 
@@ -106,25 +106,25 @@
     padding: 0 1.6rem;
   }
   .widget,
-  .widget-list-area {
+  .streamers-list-area {
     width: 100%;
   }
   .widget-close {
     top: 1.2rem;
     right: 1.6rem;
   }
-  .widget-list-title {
+  .streamers-list-title {
     padding: 1.2rem 1.6rem;
     align-self: flex-start;
   }
-  .widget-list-title span {
+  .streamers-list-title span {
     font-size: 6vw;
     line-height: 8vw;
   }
-  .widget-list-area {
+  .streamers-list-area {
     height: 100%;
   }
-  .widget-list {
+  .streamers-list {
     grid-template-columns: 1fr;
     gap: 2.4rem;
   }
@@ -498,7 +498,7 @@
   .modal-desc {
     font-size: 1.4rem;
   }
-  .widget-list-title span {
+  .streamers-list-title span {
     font-size: 2.4rem;
     line-height: 3.2rem;
   }

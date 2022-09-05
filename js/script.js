@@ -36,7 +36,7 @@ const btnScrollToTop = document.querySelector(".btn-scroll");
 const btnWidget = document.querySelector(".btn-widget");
 const btnWidgetClose = document.querySelector(".widget-close");
 const widgetEl = document.querySelector(".widget");
-const widgetListEl = document.querySelector(".widget-list");
+const widgetListEl = document.querySelector(".streamers-list");
 
 const btnGetDiscount = document.querySelector(".coupon-form-submit");
 const couponEmailEl = document.querySelector("#email-coupon");
@@ -236,7 +236,7 @@ function closeModals() {
   bodyEl.style.overflow = "auto";
 }
 
-/*** Widget ***/
+/*** Streamers ***/
 let users;
 async function fetchUsers() {
   try {
@@ -1049,13 +1049,13 @@ async function fetchUsers() {
       },
     ];
 
-    renderWidgetList();
+    renderStreamersList();
   } catch (err) {
     console.error(err, err.message);
   }
 }
 
-function renderWidgetList() {
+function renderStreamersList() {
   widgetListEl.innerHTML = "";
   const activeUsers = users
     .filter((user) => user.activity != "offline")
