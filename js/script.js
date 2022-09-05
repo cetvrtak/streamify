@@ -29,8 +29,10 @@ const packages = [
 
 const bodyEl = document.querySelector("body");
 
+const heroSectionEl = document.querySelector(".hero");
 const btnBecomePro = document.querySelector(".btn-become-pro");
 
+const btnScrollToTop = document.querySelector(".btn-scroll");
 const btnWidget = document.querySelector(".btn-widget");
 const btnWidgetClose = document.querySelector(".widget-close");
 const widgetEl = document.querySelector(".widget");
@@ -51,6 +53,7 @@ let curPkg = packages.at(1);
 let price, discount, total;
 let discountRate = 0;
 
+const orderFormSectionEl = document.querySelector(".order-form");
 const firstnameEl = document.querySelector("#firstname");
 const lastnameEl = document.querySelector("#lastname");
 const addressEl = document.querySelector("#address");
@@ -2133,10 +2136,8 @@ async function validateCoupon() {
   }
 }
 
-function scrollToOrderFormSection() {
-  const orderFormSection = document.querySelector(".order-form");
-  const coords = orderFormSection.getBoundingClientRect();
-  orderFormSection.scrollIntoView({ behavior: "smooth" });
+function scrollToSection() {
+  this.scrollIntoView({ behavior: "smooth" });
 }
 
 // EVENT LISTENERS
@@ -2146,7 +2147,10 @@ window.addEventListener("load", function () {
     : openModal(discountModalEl);
 });
 
-btnBecomePro.addEventListener("click", scrollToOrderFormSection);
+btnBecomePro.addEventListener(
+  "click",
+  scrollToSection.bind(orderFormSectionEl)
+);
 
 packagesEl.addEventListener("click", function (e) {
   const chooseNowEl = e.target.closest(".choose-now");
@@ -2158,7 +2162,7 @@ packagesEl.addEventListener("click", function (e) {
   updateBill();
   updateOrderSummary();
 
-  scrollToOrderFormSection();
+  scrollToSection.call(orderFormSectionEl);
 });
 
 togglerEl.addEventListener("click", function () {
@@ -2242,3 +2246,4 @@ btnWidgetClose.addEventListener("click", function () {
   widgetEl.classList.add("hidden");
   bodyEl.classList.remove("no-scroll");
 });
+btnScrollToTop.addEventListener("click", scrollToSection.bind(heroSectionEl));
