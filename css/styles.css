@@ -220,6 +220,8 @@
   display: flex;
   align-items: center;
   gap: 4.8rem;
+
+  z-index: 10;
 }
 .btn-scroll {
   background: #a6d51e;
