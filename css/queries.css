@@ -212,20 +212,10 @@
     padding: 0;
   }
   .block {
-    height: 64rem;
     padding: 2.4rem;
   }
-  .block-1 {
-    background-image: url("../img/blocks/benefit\ 1\ mobile.png");
-  }
-  .block-2 {
-    background-image: url("../img/blocks/benefit\ 2\ mobile.png");
-  }
-  .block-3 {
-    background-image: url("../img/blocks/benefit\ 3\ mobile.png");
-  }
   .block-box {
-    max-width: 16rem;
+    max-width: none;
   }
   .block-title {
     font-weight: 700;
@@ -745,8 +735,23 @@
   }
 }
 
-/* FIX: Comments section falling out below Figma specification */
 @media (max-width: 360px) {
+  /* BLOCKS */
+  .block {
+    height: 64rem;
+  }
+  .block-1 {
+    background-image: url("../img/blocks/benefit\ 1\ mobile.png");
+  }
+  .block-2 {
+    background-image: url("../img/blocks/benefit\ 2\ mobile.png");
+  }
+  .block-3 {
+    background-image: url("../img/blocks/benefit\ 3\ mobile.png");
+  }
+
+  /* COMMENTS */
+  /* FIX: Comments section falling out below Figma specification */
   .comment-calendar-icon {
     display: none;
   }
