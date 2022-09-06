@@ -354,6 +354,69 @@
   text-align: center;
 }
 
+/* BLOCKS */
+.blocks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4.8rem;
+}
+.block {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(17, 18, 31, 0.2) 80.55%
+    ),
+    linear-gradient(
+      270.73deg,
+      rgba(0, 0, 0, 0) 24.26%,
+      rgba(0, 0, 0, 0.8) 56.16%
+    ),
+    center;
+  border-radius: 0px;
+  width: 100%;
+  height: 44rem;
+  padding: 4.8rem;
+}
+.block-1 {
+  background-image: url("../img/blocks/benefit\ 1\ pc.png");
+}
+.block-2 {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(17, 18, 31, 0.2) 80.55%
+    ),
+    linear-gradient(90.75deg, rgba(0, 0, 0, 0) 24.3%, rgba(0, 0, 0, 0.8) 56.19%);
+  justify-content: flex-end;
+  background-image: url("../img/blocks/benefit\ 2\ pc.png");
+}
+.block-3 {
+  background-image: url("../img/blocks/benefit\ 3\ pc.png");
+}
+.block-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13rem;
+  height: 100%;
+}
+.block-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.block-title {
+  font-weight: 900;
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+}
+.block-desc {
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+}
+
 /* COMMENTS */
 .comments {
   display: flex;
