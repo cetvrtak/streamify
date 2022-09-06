@@ -212,77 +212,6 @@
   top: 2.4rem;
   right: 2.4rem;
 }
-.streamers-list-title {
-  display: flex;
-  align-items: center;
-  padding: 6.6rem 2.4rem 1rem;
-}
-.streamers-list-title span {
-  font-weight: 700;
-  font-size: 4.8rem;
-  line-height: 5.6rem;
-}
-.streamers-list-area {
-  width: 121.5rem;
-  height: 60vh;
-  overflow-y: scroll;
-}
-.streamers-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  row-gap: 4.8rem;
-}
-.widget-user {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.6rem;
-  padding: 1.6rem;
-}
-.widget-user-image {
-  position: relative;
-}
-.widget-user-avatar {
-  width: 12rem;
-  height: 12rem;
-  border-radius: 50%;
-}
-.widget-user-status-icon {
-  position: absolute;
-  width: 2.4rem;
-  height: 2.4rem;
-  left: 8.5rem;
-  top: 9.3rem;
-  border-radius: 50%;
-}
-.widget-user-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.6rem;
-}
-.widget-user-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-}
-.widget-user-name {
-  font-weight: 700;
-  font-size: 2.4rem;
-  line-height: 2.8rem;
-}
-.widget-user-email {
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
-}
-.widget-user-status {
-  font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
-}
 .fixed-buttons {
   position: fixed;
   bottom: 4.8rem;
@@ -317,6 +246,86 @@
 .widget-img {
   width: 2.4rem;
   height: 2.4rem;
+}
+
+/* STREAMERS */
+.streamers-list-title {
+  display: flex;
+  align-items: center;
+  padding: 6.6rem 2.4rem 1rem;
+}
+.streamers-list-title span {
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+}
+.streamers-list-area {
+  width: 121.5rem;
+  height: 60vh;
+  overflow-y: scroll;
+}
+.streamers-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  row-gap: 4.8rem;
+}
+.streamer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+.streamer-image {
+  position: relative;
+}
+.streamer-avatar {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+}
+.streamer-status-icon {
+  position: absolute;
+  width: 2.4rem;
+  height: 2.4rem;
+  left: 8.5rem;
+  top: 9.3rem;
+  border-radius: 50%;
+}
+.streamer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+.streamer-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+.streamer-name {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+}
+.streamer-email {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
+.streamer-status {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
+/*** Override for Streamers section ***/
+.streamers .streamers-list-title {
+  padding-left: 0;
+}
+.streamers .streamers-list-area {
+  width: auto;
 }
 
 /* BENEFITS */

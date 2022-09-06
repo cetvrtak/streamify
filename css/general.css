@@ -101,11 +101,17 @@ input {
 .streaming-icon {
   background-color: #d73939;
 }
+.offline-icon {
+  background-color: #6c6c6c;
+}
 .online-status {
   color: #3abf5d;
 }
 .streaming-status {
   color: #d73939;
+}
+.offline-status {
+  color: #6c6c6c;
 }
 
 /* SCROLLBARS */

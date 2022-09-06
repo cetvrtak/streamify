@@ -1065,23 +1065,23 @@ async function renderStreamersList(listEl, streamers) {
 
   streamers.forEach((user) => {
     let html = `
-      <div class="widget-user">
-        <div class="widget-user-image">
+      <div class="streamer">
+        <div class="streamer-image">
           <img
             src="${user.avatarUrl}"
             alt="${user.name}'s Avatar"
-            class="widget-user-avatar ${user.activity}-avatar"
+            class="streamer-avatar ${user.activity}-avatar"
           />
-          <div class="widget-user-status-icon ${user.activity}-icon"></div>
+          <div class="streamer-status-icon ${user.activity}-icon"></div>
         </div>
-        <div class="widget-user-info">
-          <div class="widget-user-details">
-            <span class="widget-user-name">${user.name}</span>
-            <span class="widget-user-email"
+        <div class="streamer-info">
+          <div class="streamer-details">
+            <span class="streamer-name">${user.name}</span>
+            <span class="streamer-email"
               >${user.email}</span
             >
           </div>
-          <div class="widget-user-status ${
+          <div class="streamer-status ${
             user.activity
           }-status">${user.activity[0].toUpperCase()}${user.activity.slice(
       1
