@@ -46,6 +46,7 @@ const commentsLoadMoreEl = document.querySelector(".comments-load");
 
 const searchStreamersEl = document.querySelector("#search-streamers");
 const streamersListEl = document.querySelector("#streamers-list");
+const streamersNoResultsEl = document.querySelector(".no-results");
 
 const packagesEl = document.querySelector(".pricing-packages");
 const orderDetailsEl = document.querySelector(".order-details");
@@ -261,6 +262,7 @@ async function renderStreamersList(listEl, streamers) {
     // Fetch streamers and store into the "users" array
     users = streamers = await fetchUsers();
   }
+  toggleNoResults(streamers.length);
 
   listEl.innerHTML = "";
 
@@ -314,6 +316,12 @@ function filterStreamers(str) {
   return users.filter((user) =>
     user.name?.toLowerCase().includes(str.toLowerCase())
   );
+}
+
+function toggleNoResults(streamers) {
+  streamers
+    ? streamersNoResultsEl.classList.add("hidden")
+    : streamersNoResultsEl.classList.remove("hidden");
 }
 
 /*** Comments ***/
