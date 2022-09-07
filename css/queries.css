@@ -353,8 +353,8 @@
     line-height: 13.6vw;
   }
   .choose-now {
-    font-size: 5vw;
-    line-height: 6vw;
+    font-size: 3.6vw;
+    line-height: 4.4vw;
     margin-bottom: 0.8rem;
   }
   .pricing-package-terms {
@@ -504,6 +504,12 @@
 @media (max-width: 630px) {
   .pricing-billing {
     width: 36rem;
+  }
+  .choose-now {
+    /* font-size: 5vw;
+    line-height: 6vw; */
+    font-size: 4vw;
+    line-height: 5vw;
   }
 }
 
@@ -767,5 +773,12 @@
   /* FIX: Comments section falling out below Figma specification */
   .comment-calendar-icon {
     display: none;
+  }
+}
+
+@media (max-width: 345px) {
+  .choose-now {
+    font-size: 1.6rem;
+    line-height: 2rem;
   }
 }
