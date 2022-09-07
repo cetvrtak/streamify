@@ -188,6 +188,11 @@
     width: 5.6rem;
     height: 5.6rem;
   }
+  .streamers-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6vw;
+  }
 
   /* BENEFITS */
   .benefits {
@@ -370,6 +375,10 @@
   .form-title {
     font-size: 6vw;
     line-height: 10vw;
+  }
+  input {
+    font-size: 4vw;
+    line-height: 6vw;
   }
   label {
     font-size: 3.5vw;
@@ -701,6 +710,10 @@
   .form-title {
     font-size: 2.4rem;
     line-height: 4rem;
+  }
+  input {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
   }
   label {
     font-size: 1.4rem;

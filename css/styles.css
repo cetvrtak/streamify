@@ -324,10 +324,28 @@
 }
 /*** Override for Streamers section ***/
 .streamers .streamers-list-title {
-  padding-left: 0;
+  padding: 0;
 }
 .streamers .streamers-list-area {
   width: auto;
+}
+.streamers-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+.input-field.input-search-streamers {
+  width: auto;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: unset;
+  border-bottom: 1px solid #eceffa;
+}
+/* Using id selector since input fields are set below in the form section */
+#search-streamers {
+  background-color: #121518;
+  color: #eceffa;
 }
 
 /* BENEFITS */
