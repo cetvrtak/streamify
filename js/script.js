@@ -301,7 +301,7 @@ function performSearch(target) {
 
   filter = target.value;
   if (filter == lastFilter) return;
-  if (!filter) renderStreamersList(streamersListEl); // when input field cleared, display original streamers
+  if (!filter) renderStreamersList(streamersListEl, users); // when input field cleared, display original streamers
 
   if (filter.length < 3) return; // only search 3 or more characters in searchTerm
 
