@@ -44,6 +44,7 @@ const couponEmailEl = document.querySelector("#email-coupon");
 const commentsEl = document.querySelector(".comments-container");
 const commentsLoadMoreEl = document.querySelector(".comments-load");
 
+const searchStreamersEl = document.querySelector("#search-streamers");
 const streamersListEl = document.querySelector("#streamers-list");
 
 const packagesEl = document.querySelector(".pricing-packages");
@@ -295,6 +296,26 @@ async function renderStreamersList(listEl, streamers) {
 // Not passing the "users" argument to force fetchUsers()
 renderStreamersList(streamersListEl);
 
+function performSearch(target) {
+  let filter, lastFilter;
+
+  filter = target.value;
+  if (filter == lastFilter) return;
+  if (!filter) renderStreamersList(streamersListEl); // when input field cleared, display original streamers
+
+  if (filter.length < 3) return; // only search 3 or more characters in searchTerm
+
+  renderStreamersList(streamersListEl, filterStreamers(target.value));
+
+  lastFilter = filter;
+}
+
+function filterStreamers(str) {
+  return users.filter((user) =>
+    user.name?.toLowerCase().includes(str.toLowerCase())
+  );
+}
+
 /*** Comments ***/
 // let comments;
 import { comments } from "./comments.js";
@@ -511,6 +532,15 @@ btnGetCode.addEventListener("click", function () {
   // Generate another coupon for this user (email address) don’t forget about that part also.
   getCoupon();
   closeModals();
+});
+
+/*** Streamers ***/
+let timeout;
+searchStreamersEl.addEventListener("keyup", (e) => {
+  if (timeout) clearTimeout(timeout);
+  timeout = setTimeout(function () {
+    performSearch(e.target);
+  }, 500);
 });
 
 /*** Comments  ***/
