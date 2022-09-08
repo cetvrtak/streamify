@@ -219,6 +219,9 @@
   .block {
     padding: 2.4rem;
   }
+  .block-container.weird-child {
+    justify-content: unset;
+  }
   .block-box {
     max-width: none;
   }

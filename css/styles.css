@@ -424,6 +424,9 @@
   gap: 13rem;
   height: 100%;
 }
+.block-container.weird-child {
+  justify-content: flex-end;
+}
 .block-box {
   display: flex;
   flex-direction: column;
