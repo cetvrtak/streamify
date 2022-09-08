@@ -784,4 +784,8 @@
     font-size: 1.6rem;
     line-height: 2rem;
   }
+  #welcome-modal {
+    width: 100%;
+    height: 100%;
+  }
 }

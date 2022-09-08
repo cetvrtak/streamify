@@ -159,9 +159,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  max-height: none;
+  height: 90vh;
 }
-.welcome-icon {
-  margin-bottom: 6.04rem;
+.welcome-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .welcome-title {
   font-weight: 700;
@@ -178,7 +183,6 @@
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  margin-bottom: 7.2rem;
 }
 .btn-get-code {
   padding: 12px 24px;
