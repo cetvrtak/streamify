@@ -786,6 +786,12 @@
   }
   #welcome-modal {
     width: 100%;
+  }
+}
+
+@media (max-height: 800px) {
+  #welcome-modal {
     height: 100%;
+    gap: 0;
   }
 }
