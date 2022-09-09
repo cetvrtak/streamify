@@ -102,6 +102,9 @@
   .coupon-form {
     width: 100%;
   }
+  .coupon-form-submit {
+    margin-bottom: 0;
+  }
 
   /* WIDGET */
   .widget {
