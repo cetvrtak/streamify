@@ -447,22 +447,17 @@ async function validateCoupon() {
     // const data = { status: true, message: "Success" };
 
     if (data.status) {
-      //    I. Apply discount
       discountRate = 0.5;
       updateBill();
       updateOrderSummary();
-      //    II. Give user feedback (optional)
-      //    III. Clear warning
-      validate(couponEl, /\w+/);
-    } else {
-      //    I. Update warning message
-      const couponContainerEl = couponEl.closest(".input-container");
-      const validationEl = couponContainerEl.querySelector(".validation-text");
-      validationEl.textContent = data.message;
-      //    II. Activate warning field
-      // using ^\b$ regex that always fails
-      validate(couponEl, /^\b$/);
     }
+
+    // I. Update warning message
+    const couponContainerEl = couponEl.closest(".input-container");
+    const validationEl = couponContainerEl.querySelector(".validation-text");
+    validationEl.textContent = data.message;
+    // II. Activate warning field using ^\b$ regex that always fails
+    validate(couponEl, /^\b$/);
   } catch (err) {
     console.error(err.message);
   }
